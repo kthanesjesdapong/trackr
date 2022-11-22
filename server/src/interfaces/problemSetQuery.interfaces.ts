@@ -11,12 +11,14 @@ export interface ProblemSetVariable {
 }
 //Array<string> generic typing an array of string || string[]
 
+//Array of Topic tags are returned
 interface TopicTags {
   name: string;
   id: string;
   titleSlug: string;
 }
 
+//Interface of ProblemData added to dynamoDB
 export interface ProblemDataResponse {
   acRate: number;
   difficulty: string;
@@ -27,14 +29,13 @@ export interface ProblemDataResponse {
   topicTags: Array<TopicTags>;
 }
 
+//Interface of total response from lcGql API call
 export interface ProblemList {
   total: number;
   data: Array<ProblemDataResponse>;
 }
 
-
-/*
-
-
-
-*/
+export interface DynamoDbParams {
+  TableName: string;
+  Item: ProblemDataResponse;
+}

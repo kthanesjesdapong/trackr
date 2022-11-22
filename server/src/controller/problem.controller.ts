@@ -1,17 +1,17 @@
 import { NextFunction, Request, Response } from 'express';
 import { getProblems } from '../service/problem.service';
-import { client } from '../utils/graphql-client';
+import { client } from '../utils/gqlClient';
 import problemSetQuery from '../constants/problemSetList';
-
 
 const variables = {
   categorySlug: "algorithms",
-  limit: 20,
+  limit: 2248,
   skip: "0",
   filters: {
   }
 };
 
+//2248
 
 //Controller Manages the work || Controller calls your service
 export async function getProblemSetHandler(req: Request, res: Response, next: NextFunction) {
@@ -22,3 +22,4 @@ export async function getProblemSetHandler(req: Request, res: Response, next: Ne
     console.log(e);
   }
 };
+

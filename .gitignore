@@ -48,3 +48,6 @@ typings/
 
 # DynamoDB Local files
 *.dynamodb/
+
+#seed.ts
+server/src/utils/seed.ts
