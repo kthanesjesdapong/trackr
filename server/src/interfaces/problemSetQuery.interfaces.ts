@@ -1,5 +1,5 @@
 // When making GQL request to leetcode.com./graphql
-export interface problemSetVariable {
+export interface ProblemSetVariable {
   categorySlug: string;
   limit?: number;
   skip?: string;
@@ -9,3 +9,32 @@ export interface problemSetVariable {
     tags?: Array<string>;
   };
 }
+//Array<string> generic typing an array of string || string[]
+
+interface TopicTags {
+  name: string;
+  id: string;
+  titleSlug: string;
+}
+
+export interface ProblemDataResponse {
+  acRate: number;
+  difficulty: string;
+  frontendQuestionId: string;
+  isFavor: boolean;
+  paidOnly: boolean;
+  status: string;
+  topicTags: Array<TopicTags>;
+}
+
+export interface ProblemList {
+  total: number;
+  data: Array<ProblemDataResponse>;
+}
+
+
+/*
+
+
+
+*/
