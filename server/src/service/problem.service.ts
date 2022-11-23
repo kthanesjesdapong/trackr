@@ -18,7 +18,7 @@ export async function getProblems(client: any, query: String, problemSetVariable
 }
 
 
-//Takes response from LeetCode GQL API and seeds response
+//Takes response from LeetCode GQL API and seed response to our DB
 export const addOrUpdateProblem = async (problemDataResponse: ProblemDataResponse, ddbDocClient: DynamoDBDocumentClient, tableName: string): Promise<PutCommandOutput | undefined> => {
   const params = {
     TableName: tableName,
@@ -26,7 +26,6 @@ export const addOrUpdateProblem = async (problemDataResponse: ProblemDataRespons
   };
   try {
     const addedProblemData = await ddbDocClient.send(new PutCommand(params));
-    console.log(addedProblemData, 'line 31 problem service');
     return addedProblemData;
   } catch (e: any) {
     console.log(e);

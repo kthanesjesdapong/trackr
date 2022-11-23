@@ -5,13 +5,12 @@ import problemSetQuery from '../constants/problemSetList';
 
 const variables = {
   categorySlug: "algorithms",
-  limit: 2248,
+  limit: 20,
   skip: "0",
   filters: {
   }
 };
 
-//2248
 
 //Controller Manages the work || Controller calls your service
 export async function getProblemSetHandler(req: Request, res: Response, next: NextFunction) {
