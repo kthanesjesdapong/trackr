@@ -13,6 +13,7 @@ const variables = {
 
 
 //Controller Manages the work || Controller calls your service
+//This handler is only to initially fetch to leetcodeGQL in order to seed our database
 export async function getProblemSetHandler(req: Request, res: Response, next: NextFunction) {
   try {
     const problemData = await getProblems(client, problemSetQuery, variables);

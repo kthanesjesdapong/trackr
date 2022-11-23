@@ -7,6 +7,9 @@ import { DynamoDBDocumentClient, PutCommand, PutCommandOutput } from '@aws-sdk/l
 
 //This is where the work is executed
 //Business logic lives in service
+
+//First two (getProblems,addOrUpdateProblem) only for seeding DDB
+//Gets list of ALL problems
 export async function getProblems(client: any, query: String, problemSetVariable: ProblemSetVariable): Promise<ProblemList | undefined> {
   //pass in the req.body once you have a forum component
   try {
@@ -16,8 +19,6 @@ export async function getProblems(client: any, query: String, problemSetVariable
     console.log(e.err);
   }
 }
-
-
 //Takes response from LeetCode GQL API and seed response to our DB
 export const addOrUpdateProblem = async (problemDataResponse: ProblemDataResponse, ddbDocClient: DynamoDBDocumentClient, tableName: string): Promise<PutCommandOutput | undefined> => {
   const params = {
