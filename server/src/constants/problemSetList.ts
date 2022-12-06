@@ -9,21 +9,17 @@ query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $fi
     ) {
     total:totalNum
     data {
-    acRate
-    difficulty
-    frontendQuestionId: questionFrontendId
-    isFavor
-    paidOnly: isPaidOnly
-    status
-    title
-    titleSlug
+      frontendQuestionId: questionFrontendId
+      title
+      titleSlug
+      difficulty
+      acRate
     topicTags {
-      name
       id
+      name
       slug
       }
      }
     }
 }`;
-
 export default problemSetQuery;

@@ -1,15 +1,13 @@
 import { Request } from 'express';
 import { ProblemSetVariable, ProblemList, ProblemDataResponse } from "../interfaces/problemSetQuery.interfaces";
-import { ddbDocClient } from '../utils/ddbDocClient';
-import { DynamoDBDocumentClient, PutCommand, PutCommandOutput } from '@aws-sdk/lib-dynamodb';
-
+import { Prisma, PrismaClient } from '@prisma/client';
 
 
 //This is where the work is executed
 //Business logic lives in service
+//Think of this as the place where you're creating the skeleton of your functions, without the real args passed in
 
-//First two (getProblems,addOrUpdateProblem) only for seeding DDB
-//Gets list of ALL problems
+//getProblems,addTopics,addProblem are used to seed data from leetcodeAPI
 export async function getProblems(client: any, query: String, problemSetVariable: ProblemSetVariable): Promise<ProblemList | undefined> {
   //pass in the req.body once you have a forum component
   try {
@@ -19,17 +17,38 @@ export async function getProblems(client: any, query: String, problemSetVariable
     console.log(e.err);
   }
 }
-//Takes response from LeetCode GQL API and seed response to our DB
-export const addOrUpdateProblem = async (problemDataResponse: ProblemDataResponse, ddbDocClient: DynamoDBDocumentClient, tableName: string): Promise<PutCommandOutput | undefined> => {
-  const params = {
-    TableName: tableName,
-    Item: problemDataResponse
-  };
+
+export const addTopics = async (data: Prisma.TopicCreateManyInput[], client: PrismaClient): Promise<Prisma.BatchPayload> => {
+  return client.topic.createMany({ data, skipDuplicates: true });
+};
+
+export const addProblem = async (problemDataResponse: ProblemDataResponse, client: PrismaClient, topicMap: Map<string, number>): Promise<ProblemList | undefined> => {
+
+  const { frontendQuestionId, title, titleSlug, difficulty, acRate, topicTags } = problemDataResponse;
   try {
-    const addedProblemData = await ddbDocClient.send(new PutCommand(params));
-    return addedProblemData;
+    const addedProblem = await client.problem.create({
+      data: {
+        id: parseInt(frontendQuestionId),
+        title: title,
+        titleSlug: titleSlug,
+        difficulty: difficulty,
+        acRate: acRate,
+        topics: {
+          connectOrCreate: topicTags.map((topic) => ({
+            where: {
+              id: topicMap.get(topic.slug)
+            },
+            create: {
+              id: topicMap.get(topic.slug)!,
+              topicSlug: topic.slug,
+              topicName: topic.name
+            }
+          }))
+        },
+      }
+    });
   } catch (e: any) {
     console.log(e);
   }
-}
-
+  return;
+};

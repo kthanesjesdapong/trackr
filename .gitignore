@@ -51,3 +51,23 @@ typings/
 
 #seed.ts
 server/src/utils/seed.ts
+
+
+yarn-error.log/
+vendor/
+tmp/
+dist/
+.DS_Store
+.idea
+tmp-resolvers
+package-lock.json
+flow-typed
+yarn.lock
+javascript/**/migrations/
+typescript/**/migrations/
+misc/**/migrations/
+server/**/migrations/
+experimental/**/*.db
+
+dev.db
+*.env*

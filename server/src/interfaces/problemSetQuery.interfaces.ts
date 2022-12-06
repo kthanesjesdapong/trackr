@@ -13,19 +13,21 @@ export interface ProblemSetVariable {
 
 //Array of Topic tags are returned
 interface TopicTags {
-  name: string;
   id: string;
-  titleSlug: string;
+  name: string;
+  slug: string;
 }
 
 //Interface of ProblemData added to dynamoDB
 export interface ProblemDataResponse {
-  acRate: number;
-  difficulty: string;
   frontendQuestionId: string;
+  title: string;
+  titleSlug: string;
+  difficulty: string;
+  acRate: number;
+  status: string;
   isFavor: boolean;
   paidOnly: boolean;
-  status: string;
   topicTags: Array<TopicTags>;
 }
 
