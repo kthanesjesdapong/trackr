@@ -1,4 +1,3 @@
-import { Request } from 'express';
 import { ProblemSetVariable, ProblemList, ProblemDataResponse } from "../interfaces/problemSetQuery.interfaces";
 import { Prisma, PrismaClient } from '@prisma/client';
 

@@ -5,6 +5,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator pothos {
+  provider = "prisma-pothos-types"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -13,10 +17,10 @@ datasource db {
 //Implicit Many-To-Many
 model Problem {
   id             Int       @id
-  title          String?
-  titleSlug      String?
-  difficulty     String?
-  acRate         Float?
+  title          String
+  titleSlug      String
+  difficulty     String
+  acRate         Float
   status         String    @default("NOT_STARTED")
   totalAttempts  Int?
   lastAttempted  DateTime?

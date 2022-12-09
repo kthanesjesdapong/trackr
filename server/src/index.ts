@@ -11,23 +11,8 @@ import http from 'http';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { IApolloServerContext } from '../src/interfaces/IApolloServerContext';
-
-
-// The GraphQL schema
-const typeDefs = `#graphql
-  type Query {
-    hello: String
-  }
-`;
-
-// A map of functions which return data for the schema.
-const resolvers = {
-  Query: {
-    hello: () => 'world',
-  },
-};
-
-
+import { schema } from './graphql/schema/schema';
+import { prisma } from './prisma/client';
 
 
 const app = express();
@@ -39,12 +24,14 @@ const httpServer = http.createServer(app);
 
 app.use(express.json());
 
-
+const context: IApolloServerContext = {
+  prisma: prisma
+};
 // Apollo Server initialization, plus drain plugin for our httpServer
 const server = async () => {
+
   const apolloServer = new ApolloServer({
-    typeDefs,
-    resolvers,
+    schema: schema,
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   });
   await apolloServer.start();
@@ -58,7 +45,9 @@ const server = async () => {
     // expressMiddleware accepts the same arguments:
     // an Apollo Server instance and optional configuration options
     expressMiddleware(apolloServer, {
-      context: async ({ req }) => ({ token: req.headers.token }),
+      context: async ({ req, res }) => ({
+        prisma: context
+      }),
     }),
   );
   await new Promise<void>((resolve) => httpServer.listen({
@@ -70,16 +59,3 @@ const server = async () => {
   await connect();
 };
 server();
-
-
-
-
-
-
-// app.listen(port, async () => {
-//   logger.info(`App is running at http://localhost:${port}`);
-//   await connect();
-//   //Mounting Our Routes
-//   routes(app);
-
-// });
