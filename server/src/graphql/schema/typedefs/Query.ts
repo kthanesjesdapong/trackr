@@ -13,6 +13,8 @@ builder.queryField("problemsBasedOnTopicIds", (t) => t.prismaField({
   //Pass required:true to args
   args: {
     topicId: t.arg.intList({ required: true }),
+    take: t.arg.int({ required: false }),
+    cursor: t.arg.int({ required: false })
   },
   //prisma query obj thats provided to us, that is pass downed into our prisma queries based on gql req
   resolve: async (query, root, args, ctx, info) => {

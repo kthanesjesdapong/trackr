@@ -17,6 +17,6 @@ export const Problem = builder.prismaObject("Problem", {
           id: 'desc'
         }
       }),
-    }),
+    })
   })
 });

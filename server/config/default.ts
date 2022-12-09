@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 export default {
-  port: 8080,
+  port: process.env.PORT,
   gqlEndpoint: process.env.endpoint,
   LEETCODE_API_ENDPOINT: process.env.LEETCODE_API_ENDPOINT,
   TABLE_NAME: process.env.TABLE_NAME,
