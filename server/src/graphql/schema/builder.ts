@@ -14,7 +14,7 @@ export const builder = new SchemaBuilder<{
 }>({
   plugins: [PrismaPlugin, RelayPlugin],
   relayOptions: {
-    clientMutationId: 'omit',
+    clientMutationId: 'required',
     cursorType: 'ID',
   },
   prisma: {

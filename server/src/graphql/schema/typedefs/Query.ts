@@ -46,7 +46,7 @@ builder.queryField('problems', (t) => t.prismaConnection({
   cursor: 'id',
   args: {
     id: t.arg.id({ required: false }),
-    topicId: t.arg.intList({ required: true }),
+    topicSlug: t.arg.stringList({ required: true })
   },
   defaultSize: 10,
   resolve: (query, parent, args, context, info) => prisma.problem.findMany({
@@ -57,8 +57,8 @@ builder.queryField('problems', (t) => t.prismaConnection({
     where: {
       topics: {
         some: {
-          id: {
-            in: args.topicId
+          topicSlug: {
+            in: args.topicSlug
           }
         }
       }

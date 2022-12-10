@@ -3,7 +3,7 @@ import { builder } from "../builder";
 
 //Defining what data is exposed through our API
 export const Problem = builder.prismaNode("Problem", {
-  id: { resolve: (problem) => problem.id },
+  id: { field: 'id' },
   findUnique: (id) => ({ id: Number.parseInt(id, 10) }),
   fields: (t) => ({
     title: t.exposeString('title'),
