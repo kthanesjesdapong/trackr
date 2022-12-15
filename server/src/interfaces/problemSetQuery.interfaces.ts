@@ -25,9 +25,6 @@ export interface ProblemDataResponse {
   titleSlug: string;
   difficulty: string;
   acRate: number;
-  status: string;
-  isFavor: boolean;
-  paidOnly: boolean;
   topicTags: Array<TopicTags>;
 }
 

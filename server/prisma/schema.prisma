@@ -21,12 +21,10 @@ model Problem {
   titleSlug      String
   difficulty     String
   acRate         Float
-  status         String    @default("NOT_STARTED")
-  totalAttempts  Int?
-  lastAttempted  DateTime?
   topics      Topic[]
   topicTags Json?
 }
+
 model Topic {
   id             Int      @id @default(autoincrement())
   topicSlug      String   @unique

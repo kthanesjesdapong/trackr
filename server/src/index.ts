@@ -16,6 +16,17 @@ import { prisma } from './prisma/client';
 
 
 const app = express();
+const SEED_PORT = config.get<number>('SEED_PORT');
+
+//Server for Seeding
+const seedServer = async () => {
+  app.listen(SEED_PORT, async () => {
+    console.log('line 22, seeServer Func');
+    routes(app);
+  });
+};
+
+
 const port = config.get<number>('port');
 //httpServer handles inc req to our Express app.
 // Below, we tell Apollo Server to "drain" this httpServer,
@@ -54,8 +65,8 @@ const server = async () => {
     port: port
   }, () => {
     logger.info(`App is running at http://localhost:${port}`);
-    routes(app);
   }));
   await connect();
 };
 server();
+seedServer();

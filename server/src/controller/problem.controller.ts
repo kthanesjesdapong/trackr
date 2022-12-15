@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 import { getProblems } from '../service/problem.service';
 import { client } from '../utils/gqlClient';
+import axios from 'axios';
 import problemSetQuery from '../constants/problemSetList';
 
 const variables = {
   categorySlug: "algorithms",
-  limit: 2262,
+  limit: 10,
   skip: "0",
   filters: {
   }

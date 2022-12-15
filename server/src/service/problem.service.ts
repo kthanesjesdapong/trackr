@@ -25,6 +25,7 @@ export const addProblem = async (problemDataResponse: ProblemDataResponse, clien
 
   const { frontendQuestionId, title, titleSlug, difficulty, acRate, topicTags } = problemDataResponse;
   try {
+    //
     const addedProblem = await client.problem.create({
       data: {
         id: parseInt(frontendQuestionId),
@@ -34,9 +35,11 @@ export const addProblem = async (problemDataResponse: ProblemDataResponse, clien
         acRate: acRate,
         topics: {
           connectOrCreate: topicTags.map((topic) => ({
+            // Match the ID associated with the topicSlugs  'array' : 1
             where: {
               id: topicMap.get(topic.slug)
             },
+            //assign the topics relation with their topic id.
             create: {
               id: topicMap.get(topic.slug)!,
               topicSlug: topic.slug,
