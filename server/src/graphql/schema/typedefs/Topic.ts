@@ -4,7 +4,7 @@ builder.prismaObject("Topic", {
   fields: (t) => ({
     id: t.exposeInt('id'),
     topicSlug: t.exposeString('topicSlug'),
-    topicname: t.exposeString('topicName'),
+    topicName: t.exposeString('topicName'),
     problems: t.relation('problems'),
   })
 });

@@ -11,6 +11,7 @@ export const Problem = builder.prismaNode("Problem", {
     difficulty: t.exposeString('difficulty'),
     acRate: t.exposeFloat('acRate'),
     status: t.exposeString('status'),
+    //Connects topics -> topics as nodes
     topics: t.relatedConnection('topics', {
       cursor: 'id',
       args: { topicId: t.arg.intList() },
