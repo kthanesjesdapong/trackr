@@ -25,15 +25,124 @@ export const addProblem = async (problemDataResponse: ProblemDataResponse, clien
 
   const { frontendQuestionId, title, titleSlug, difficulty, acRate, topicTags } = problemDataResponse;
   try {
-    //
+    //creating the Problem based off of the response from hitting our api
     const addedProblem = await client.problem.create({
       data: {
         id: parseInt(frontendQuestionId),
+        frontendId: parseInt(frontendQuestionId),
         title: title,
         titleSlug: titleSlug,
         difficulty: difficulty,
         acRate: acRate,
         topics: {
+          create: topicTags.map((topic) => ({
+            topic: {
+              connectOrCreate: {
+                create: {
+                  id: topicMap.get(topic.slug)!,
+                  topicSlug: topic.slug,
+                  topicName: topic.name
+                },
+                where: {
+                  id: topicMap.get(topic.slug)
+                },
+              }
+            }
+          }))
+        }
+      }
+    });
+  } catch (e: any) {
+    console.log(e);
+  }
+  return;
+};
+
+/*
+Explicit Many to Many Table:
+
+model Problem {
+  id             Int       @id
+  frontendId     Int       
+  title          String
+  titleSlug      String
+  difficulty     String
+  acRate         Float
+  topics TopicOnProblems[]
+  topicTags Json?
+}
+
+model Topic {
+  id             Int      @id @default(autoincrement())
+  topicSlug      String   @unique
+  topicName      String   @unique
+  problems TopicOnProblems[]
+}
+
+model TopicOnProblems {
+  problem   Problem @relation(fields:[problemId], references: [id])
+  problemId Int
+  topic     Topic     @relation(fields:[topicId], references:[id])
+  topicId    Int
+  @@id([problemId, topicId])
+}
+
+TopicOnProblems is our relation table // JOIN
+--------------------------------------------------
+//Explicit connectOrCreate
+create: topicTags.map((topic)=> ({
+  topic: {
+    connectOrCreate: {
+      create: {
+        id: topicMap.get(topic.slug)!,
+              topicSlug: topic.slug,
+              topicName: topic.name
+      },
+      where: {
+        id: topicMap.get(topic.slug)
+      },
+    }
+  }
+}))
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+---------------------------------------
+Implicit M-N
+
+model Problem {
+  id             Int       @id
+  frontendId     Int       
+  title          String
+  titleSlug      String
+  difficulty     String
+  acRate         Float
+  topics      Topic[]
+  topicTags Json?
+}
+
+model Topic {
+  id             Int      @id @default(autoincrement())
+  topicSlug      String   @unique
+  topicName      String   @unique
+  problems Problem[]
+}
+
+// Implicit M-N connectOrCreate
+
+       topics: {
           connectOrCreate: topicTags.map((topic) => ({
             // Match the ID associated with the topicSlugs  'array' : 1
             where: {
@@ -47,10 +156,6 @@ export const addProblem = async (problemDataResponse: ProblemDataResponse, clien
             }
           }))
         },
-      }
-    });
-  } catch (e: any) {
-    console.log(e);
-  }
-  return;
-};
+
+
+*/

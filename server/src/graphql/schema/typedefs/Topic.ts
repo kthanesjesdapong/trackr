@@ -5,7 +5,7 @@ builder.prismaObject("Topic", {
     id: t.exposeInt('id'),
     topicSlug: t.exposeString('topicSlug'),
     topicName: t.exposeString('topicName'),
-    problems: t.relation('problems'),
+    // problems: t.relation('problems'),
   })
 });
 export const schema = builder.toSchema({});

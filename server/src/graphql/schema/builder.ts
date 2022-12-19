@@ -18,7 +18,7 @@ export const builder = new SchemaBuilder<{
     cursorType: 'ID',
   },
   prisma: {
-    client: prisma
+    client: prisma,
   }
 });
 

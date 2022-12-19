@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { getProblems } from '../service/problem.service';
 import { client } from '../utils/gqlClient';
-import axios from 'axios';
 import problemSetQuery from '../constants/problemSetList';
 
 const variables = {
