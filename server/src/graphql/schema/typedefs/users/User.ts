@@ -9,6 +9,6 @@ export const User = builder.prismaObject('User', {
       type: "Date"
     }),
     //Table does not exist yet, and does not have any data within it.
-    problemAttempts: t.relation('problemAttempts')
+    // problemAttempts: t.relation('problemAttempts')
   })
 });

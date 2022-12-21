@@ -1,7 +1,7 @@
 import { builder } from "../../builder";
 
-export const TopicOnProblemsRef = builder.objectRef('TopicOnProblems');
-TopicOnProblemsRef.implement;
+// export const TopicOnProblemsRef = builder.objectRef('TopicOnProblems');
+// TopicOnProblemsRef.implement;
 
 export const Problem = builder.prismaNode('Problem', {
   id: { field: 'id' },

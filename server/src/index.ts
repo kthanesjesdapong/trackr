@@ -21,7 +21,7 @@ const SEED_PORT = config.get<number>('SEED_PORT');
 //Server for Seeding
 const seedServer = async () => {
   app.listen(SEED_PORT, async () => {
-    console.log('line 22, seeServer Func');
+    console.log('Line 24, seedServer Func, server/index.ts');
     routes(app);
   });
 };
