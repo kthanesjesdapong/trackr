@@ -1,4 +1,4 @@
-export * from './Problem';
-export * from './Topic';
-export * from './Query';
+export * from './problems/Problem';
+export * from './topics/Topic';
+export * from './query/Query';
 export * from './TopicOnProblems';

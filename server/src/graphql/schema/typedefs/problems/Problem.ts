@@ -1,7 +1,4 @@
-import { builder } from "../builder";
-import { TopicOnProblems } from '@prisma/client';
-// import { Topic } from "@prisma/client";
-//Defining what data is exposed through our API
+import { builder } from "../../builder";
 
 export const TopicOnProblemsRef = builder.objectRef('TopicOnProblems');
 TopicOnProblemsRef.implement;
@@ -24,7 +21,7 @@ export const Problem = builder.prismaNode('Problem', {
   })
 
   /*
-  //Only works for Implicit M-N Tables So far
+  //Implicit Table relatedConnection
   topics: t.relatedConnection('topics', {
     cursor: 'id',
     args: { topicId: t.arg.intList() },
@@ -34,6 +31,5 @@ export const Problem = builder.prismaNode('Problem', {
       }
     }),
   })
-
   */
 });

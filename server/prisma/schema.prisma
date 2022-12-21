@@ -23,6 +23,8 @@ model Problem {
   acRate         Float
   topics TopicOnProblems[]
   topicTags Json?
+  //A problemAttempt can have zero or more attempts
+  problemAttempts ProblemAttempt[]
 
   @@unique([id,title])
 }
@@ -49,6 +51,42 @@ model TopicOnProblems {
   @@id([problemId, topicId])
 }
 
+//Add more fields for User Table Later // PW, EMAIL
+model User {
+  id String @id @default(uuid())
+  registeredAt DateTime @default(now())
+  //A user can have zero or more problemAttempts
+  problemAttempts ProblemAttemptDetails[]
+}
 
 
+//Each row within ProblemAttempt will be an attempt
+model ProblemAttempt {
+  id             Int      @id @default(autoincrement())
+  createdAt      DateTime @default(now())
 
+
+  problem        Problem @relation(fields:[problemId], references: [id])
+  // A problem attempt must always have a problemId
+  problemId      Int
+
+
+  // ProblemAttemptDetails
+  problemAttemptDetail ProblemAttemptDetails @relation(fields:[attemptDetailId], references: [id])
+  //attemptDetailId must be unique
+  attemptDetailId Int @unique
+
+}
+
+model ProblemAttemptDetails {
+  id        Int      @id @default(autoincrement())
+
+  //A problemAttemptDetails must have one user
+  user      User     @relation(fields:[userId], references:[id])
+  userId    String
+
+  //ProblemAttemptDetails may have zero or one ProblemAttemptId
+  ProblemAttempt ProblemAttempt?
+  status    String
+  createdAt DateTime @default(now())
+}
