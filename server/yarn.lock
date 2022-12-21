@@ -1026,22 +1026,22 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@pothos/core@^3.23.1":
-  version "3.23.1"
-  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.23.1.tgz#a019d0470c62a7cfb02f1541a30055204baa34d5"
-  integrity sha512-xoFLnqinTh0tdX8P/lWSEYjjmiBtaFf82/WEnFadvn4iH1kPwaQDL8fT5V6OAcIc0vSffzGAQxt1V2/H7ZCEwg==
+"@pothos/core@^3.23.2":
+  version "3.23.2"
+  resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.23.2.tgz#c4589a5d97f064dcc608c8ad1025a733b3f7deea"
+  integrity sha512-A+YANU9RKIXQdJyOl6elPp95SHtQdl8f/v9FSTK7cfwn5V1wapz9NFouOCtuh9BCnFntH5HBTA2RexOf4LpryQ==
 
-"@pothos/plugin-prisma@^3.38.0":
-  version "3.38.0"
-  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.38.0.tgz#55494c57fb7fda16e113e6aaa0ad12fb8d7272a5"
-  integrity sha512-4kUBgIu57zDPzriGkwRbNALq2c1aIBejUnYpjdoigh4/ndYVtLqUUWv4xS98loZ6PCtGi5zYtGukOzZYMYgZDw==
+"@pothos/plugin-prisma@^3.38.1":
+  version "3.38.1"
+  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.38.1.tgz#a0fd5d190775c73267e90729de0295372a730aab"
+  integrity sha512-wdBbnhpzdMRJT5Xk5CFcgOZaPKEOoXBOdl18dem9QtrvtZ/L+9/Xnm2L2CHqomiubhi4yr7ciPiRyvej08cTaQ==
   dependencies:
     "@prisma/generator-helper" "^4.7.1"
 
-"@pothos/plugin-relay@^3.30.0":
-  version "3.30.0"
-  resolved "https://registry.yarnpkg.com/@pothos/plugin-relay/-/plugin-relay-3.30.0.tgz#3ad97a38cfe4ea06fa11e4e424a2aff96eaabc94"
-  integrity sha512-4NCeZqrMUTinN1R5F0Yfc3u6Hp94Ze2aaXIGpn+iuooIdBO0NwTnzhfuWrrtsCw5Z8vjxMZRLCbk/XnWGwsIZA==
+"@pothos/plugin-relay@^3.30.2":
+  version "3.30.2"
+  resolved "https://registry.yarnpkg.com/@pothos/plugin-relay/-/plugin-relay-3.30.2.tgz#6a6da3a91b985b4292dd870e09d602cf17f6de76"
+  integrity sha512-qxbCl5wZoPcQ+a1FjsFR6Lhv/MsUsfdh9eJvUQB0cHFTnpBs10TcJw77+UHq3JLKYBqkk2Rrh946yuLswEjl9Q==
 
 "@prisma/client@^4.7.0":
   version "4.7.0"

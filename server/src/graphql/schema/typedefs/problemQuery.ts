@@ -23,31 +23,31 @@ builder.queryField('problems', (t) => t.prismaConnection({
 //Connects Problems to Problems Nodes -> Edges
 
 
-// builder.queryField('problemsBasedOnTopicSlug', (t) => t.prismaConnection({
-//   type: Problem,
-//   cursor: 'id',
-//   args: {
-//     id: t.arg.id({ required: false }),
-//     topicSlug: t.arg.stringList({ required: true })
-//   },
-//   defaultSize: 10,
-//   resolve: (query, parent, args, context, info) => prisma.problem.findMany({
-//     ...query,
-//     orderBy: [{
-//       id: 'asc'
-//     }],
-//     where: {
-//       topics: {
-//         some: {
-//           topicSlug: {
-//             in: args.topicSlug
-//           }
-//         }
-//       }
-//     },
-//     include: { topics: true }
-//   }),
-// }));
+builder.queryField('problemsBasedOnTopicSlug', (t) => t.prismaConnection({
+  type: Problem,
+  cursor: 'id',
+  args: {
+    id: t.arg.id({ required: false }),
+    topicSlug: t.arg.stringList({ required: true })
+  },
+  defaultSize: 10,
+  resolve: (query, parent, args, context, info) => prisma.problem.findMany({
+    ...query,
+    orderBy: [{
+      id: 'asc'
+    }],
+    where: {
+      topics: {
+        some: {
+          topicSlug: {
+            in: args.topicSlug
+          }
+        }
+      }
+    },
+    include: { topics: true }
+  }),
+}));
 
 
 
@@ -56,27 +56,27 @@ builder.queryField('problems', (t) => t.prismaConnection({
 //Queries based off of difficulty
 
 
-// builder.queryField('problemsOnDifficulty', (t) => t.prismaConnection({
-//   type: Problem,
-//   cursor: 'id',
-//   args: {
-//     diffuculty: t.arg.string({ required: true })
-//   },
-//   defaultSize: 10,
-//   resolve: (query, parent, args, context, info) => prisma.problem.findMany({
-//     ...query,
-//     orderBy: [{
-//       id: 'asc'
-//     }],
-//     where: {
-//       difficulty: args.diffuculty
-//     },
-//     include: { topics: true }
-//   }),
-// }));
+builder.queryField('problemsOnDifficulty', (t) => t.prismaConnection({
+  type: Problem,
+  cursor: 'id',
+  args: {
+    diffuculty: t.arg.string({ required: true })
+  },
+  defaultSize: 10,
+  resolve: (query, parent, args, context, info) => prisma.problem.findMany({
+    ...query,
+    orderBy: [{
+      id: 'asc'
+    }],
+    where: {
+      difficulty: args.diffuculty
+    },
+    include: { topics: true }
+  }),
+}));
 
 //Could directly change Prisma -> Topic OutPut Type directly to allow for null fields in where { difficulty?}
 //trying to figure out how to query based on one field
 
 
-//Queries based off of searchKeyWords -> 
+//Queries based off of searchKeyWords -> this will be done on front-End (filtering)

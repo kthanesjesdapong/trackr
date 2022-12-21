@@ -7,15 +7,17 @@
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "studio": "npx prisma studio",
     "migration": "npx prisma migrate dev",
-    "seed": "ts-node ./src/utils/seed.ts"
+    "seed": "ts-node ./src/utils/seed.ts",
+    "generate": "npx prisma generate"
   },
   "dependencies": {
     "@apollo/server": "^4.2.2",
     "@aws-sdk/client-dynamodb": "^3.215.0",
     "@aws-sdk/credential-providers": "^3.215.0",
     "@aws-sdk/lib-dynamodb": "^3.215.0",
-    "@pothos/core": "^3.23.1",
-    "@pothos/plugin-prisma": "^3.38.0",
+    "@pothos/core": "^3.23.2",
+    "@pothos/plugin-prisma": "^3.38.1",
+    "@pothos/plugin-relay": "^3.30.2",
     "@prisma/client": "^4.7.0",
     "@types/pg": "^8.6.5",
     "axios": "^1.1.3",

@@ -23,6 +23,8 @@ model Problem {
   acRate         Float
   topics TopicOnProblems[]
   topicTags Json?
+
+  @@unique([id,title])
 }
 
 model Topic {
@@ -30,14 +32,20 @@ model Topic {
   topicSlug      String   @unique
   topicName      String   @unique
   problems TopicOnProblems[]
+
+  @@unique([id,topicSlug,topicName])
 }
 
 
 model TopicOnProblems {
-  problem   Problem @relation(fields:[problemId], references: [id])
+  problem   Problem   @relation(fields:[problemId], references: [id])
+  topic     Topic     @relation(fields:[topicId,topicName,topicSlug], references:[id, topicName, topicSlug])
+
   problemId Int
-  topic     Topic     @relation(fields:[topicId], references:[id])
+
   topicId    Int
+  topicSlug String
+  topicName String
   @@id([problemId, topicId])
 }
 
