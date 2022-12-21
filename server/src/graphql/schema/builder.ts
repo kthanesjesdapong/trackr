@@ -8,7 +8,7 @@ import { prisma } from '../../prisma/client';
 //Setting up genereric for custom scalars
 export const builder = new SchemaBuilder<{
   Scalars: {
-    Date: { Input: Date; Output: Date; };
+    Date: { Input: Date; Output: Date; },
   };
   PrismaTypes: PrismaTypes;
 }>({
