@@ -6,12 +6,14 @@ import { builder } from "../../builder";
 export const ProblemAttempt = builder.prismaNode('ProblemAttempt', {
   id: { field: 'id' },
   fields: (t) => ({
-    //backendId: t.expose('backendId'),
+    frontendId: t.exposeInt('frontendId'),
     createdAt: t.expose('createdAt', {
       type: 'Date'
     }),
-    //problemId - int
 
-    //attemptDetailId
+    //Connect ID of the problem you are querying for
+    problemId: t.relation('problem'),
+    //Connect attemptDetailId
+    attemptDetailId: t.relation('problemAttemptDetail')
   })
 });

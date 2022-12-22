@@ -64,7 +64,7 @@ model User {
 model ProblemAttempt {
   id             Int      @id @default(autoincrement())
   createdAt      DateTime @default(now())
-  backendId     Int       @default(autoincrement())
+  frontendId     Int       @default(autoincrement())
 
   problem        Problem @relation(fields:[problemId], references: [id])
   // A problem attempt must always have a problemId
