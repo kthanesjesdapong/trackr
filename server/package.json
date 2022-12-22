@@ -36,7 +36,6 @@
     "pg": "^8.8.0",
     "pino": "^8.1.0",
     "pino-pretty": "^8.1.0",
-    "prisma-generator-pothos-codegen": "^0.4.5",
     "reflect-metadata": "^0.1.13",
     "zod": "^3.17.3"
   },

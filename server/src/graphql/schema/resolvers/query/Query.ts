@@ -1,1 +1,1 @@
-export * from '../../typedefs/problems/queries/index';
+export * from '../../models/problems/queries/index';
