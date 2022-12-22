@@ -3,11 +3,11 @@
 /** @type {import('prisma-generator-pothos-codegen').Config} */
 module.exports = {
     inputs: {
-        outputFilePath: './src/graphql/__generated__/inputs.ts',
+        outputFilePath: './src/graphql/generated/inputs.ts',
     },
     crud: {
-        outputDir: './src/graphql/__generated__/',
-        inputsImporter: `export * as Inputs from '@graphql/__generated__/inputs';`,
+        outputDir: './src/graphql/generated/',
+        inputsImporter: `export * as Inputs from '@graphql/generated/inputs';`,
         resolversImports: `import prisma from '@lib/prisma';`,
         prismaCaller: 'prisma',
     },
