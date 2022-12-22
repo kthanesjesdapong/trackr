@@ -1,5 +1,4 @@
 import { builder } from "../../../builder";
-import { prisma } from '../../../../../prisma/client';
 import { Problem } from "../Problem";
 
 builder.queryField('problemsOnDifficulty', (t) => t.prismaConnection({
@@ -9,7 +8,7 @@ builder.queryField('problemsOnDifficulty', (t) => t.prismaConnection({
     diffuculty: t.arg.string({ required: true })
   },
   defaultSize: 20,
-  resolve: (query, parent, args, context, info) => prisma.problem.findMany({
+  resolve: (query, parent, args, context, info) => context.prisma.problem.findMany({
     ...query,
     orderBy: [{
       id: 'asc'

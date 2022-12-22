@@ -10,9 +10,9 @@ import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHt
 import http from 'http';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { IApolloServerContext } from '../src/interfaces/IApolloServerContext';
 import { schema } from './graphql/schema/schema';
 import { prisma } from './prisma/client';
+import { IPrismaContext } from './prisma/IPrismaContext';
 
 
 const app = express();
@@ -21,7 +21,7 @@ const SEED_PORT = config.get<number>('SEED_PORT');
 //Server for Seeding
 const seedServer = async () => {
   app.listen(SEED_PORT, async () => {
-    console.log('Line 24, seedServer Func, server/index.ts');
+    console.log('Line 24, seedServer Func, server/');
     routes(app);
   });
 };
@@ -35,13 +35,10 @@ const httpServer = http.createServer(app);
 
 app.use(express.json());
 
-const context: IApolloServerContext = {
-  prisma: prisma
-};
 // Apollo Server initialization, plus drain plugin for our httpServer
 const server = async () => {
 
-  const apolloServer = new ApolloServer({
+  const apolloServer = new ApolloServer<IPrismaContext>({
     schema: schema,
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   });
@@ -57,7 +54,7 @@ const server = async () => {
     // an Apollo Server instance and optional configuration options
     expressMiddleware(apolloServer, {
       context: async ({ req, res }) => ({
-        prisma: context
+        prisma: prisma
       }),
     }),
   );
