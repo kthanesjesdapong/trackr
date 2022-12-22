@@ -10,7 +10,6 @@ export const ProblemAttempt = builder.prismaNode('ProblemAttempt', {
     createdAt: t.expose('createdAt', {
       type: 'Date'
     }),
-
     //Connect ID of the problem you are querying for
     problemId: t.relation('problem'),
     //Connect attemptDetailId

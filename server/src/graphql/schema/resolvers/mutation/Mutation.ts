@@ -1,1 +1,2 @@
 export * from '/Users/kavinthanesjesdapong/trackr/server/src/graphql/schema/typedefs/users/mutations/index';
+export * from '/Users/kavinthanesjesdapong/trackr/server/src/graphql/schema/typedefs/problemAttempt/mutations/index';
