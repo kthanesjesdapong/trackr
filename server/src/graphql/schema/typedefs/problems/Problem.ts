@@ -18,7 +18,6 @@ export const Problem = builder.prismaNode('Problem', {
       args: { problemId_topicId: t.arg.intList() },
     }),
   })
-
   /*
   //Implicit Table relatedConnection
   topics: t.relatedConnection('topics', {

@@ -29,7 +29,7 @@ export const builder = new SchemaBuilder<{
 builder.queryType({});
 
 //init 
-// builder.mutationType({});
+builder.mutationType({});
 
 //gQL doesnt have DATE type.
 builder.addScalarType("Date", DateResolver, {});
