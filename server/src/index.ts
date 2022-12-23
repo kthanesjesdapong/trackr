@@ -2,7 +2,6 @@ import 'dotenv/config';
 import express from 'express';
 import logger from './utils/logger';
 import config from "config";
-import routes from './routes/index';
 import connect from './prisma/client';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
@@ -13,19 +12,10 @@ import bodyParser from 'body-parser';
 import { schema } from './graphql/schema/schema';
 import { prisma } from './prisma/client';
 import { IPrismaContext } from './prisma/IPrismaContext';
+export * from './utils/seedServer';
 
 
 const app = express();
-const SEED_PORT = config.get<number>('SEED_PORT');
-
-//Server for Seeding
-const seedServer = async () => {
-  app.listen(SEED_PORT, async () => {
-    console.log('Line 24, seedServer Func, server/');
-    routes(app);
-  });
-};
-
 
 const port = config.get<number>('port');
 //httpServer handles inc req to our Express app.
@@ -66,4 +56,3 @@ const server = async () => {
   await connect();
 };
 server();
-seedServer();

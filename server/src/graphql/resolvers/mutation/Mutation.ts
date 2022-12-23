@@ -1,2 +1,2 @@
-export * from '../../../g/schema/typedefs/users/mutations/index';
-export * from '../../../g/schema/typedefs/problemAttempt/mutations/index';
+export * from '../../schema/models/users/mutations/index';
+export * from '../../schema/models/problemAttempt/mutations/index';
