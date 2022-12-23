@@ -1,7 +1,4 @@
 import { builder } from '../../../builder';
-import { Problem } from '../../problems/Problem';
-import { ProblemAttemptDetails } from '@prisma/client';
-
 
 builder.mutationField('createProblemAttempt', (t) => t.prismaField({
   type: 'ProblemAttempt',
@@ -29,14 +26,19 @@ builder.mutationField('createProblemAttempt', (t) => t.prismaField({
 
 
 /*
+
+InputRef for args field, then use that to build the type of input 
+
 t.arg.Problem.id
 
+//create InputRef for args field. 
+1.create a problemAttempt,
+connect it with a problem through a problem Id, (this will be the id of the problem the user works on in prod)
 
-create a problemAttempt,
-connect it with a problem through a problem Id,
-
+// this is a nested create, so create problem attemptDetail and then connect the current problemAttempt with the attemptDetailId
 create a ProblemAttemptDetail
 and then connect it it with the attemptDetailId
+
 
 
 
@@ -50,8 +52,7 @@ problemId: {
 attemptDetailId:{
   create: {
     userId: 'kavin1'// this is going to be the username of the user
-    status: args.status,
-
+    status: args.status
   }
 }
 
