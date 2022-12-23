@@ -2,16 +2,31 @@
 
 /** @type {import('prisma-generator-pothos-codegen').Config} */
 module.exports = {
+    // Getting to my inputs
     inputs: {
-        outputFilePath: './src/graphql/generated/inputs.ts',
+        outputFilePath: './src/graphql/schema/inputs/index.ts',
     },
+
     crud: {
-        outputDir: './src/graphql/generated/',
-        inputsImporter: `export * as Inputs from '@graphql/generated/inputs';`,
-        resolversImports: `import prisma from '@lib/prisma';`,
-        prismaCaller: 'prisma',
+        // outputDir: './src/graphql/schema/generated/',
+        // inputsImporter: `export * as Inputs from '../inputs';`,
+        // prismaCaller: '_context.prisma',
+        //Imports you want to add to the resolver
+        // resolversImports: `import {Prisma} from '.prisma/client';`,
+        disabled: true,
     },
     global: {
-        builderImporter: `import { builder } from '@graphql/builder';`,
+        replacer: (str, section) => {
+            if (section === 'crud.model.resolver') {
+                return str.replace(
+                    "import * as Inputs from '../inputs'",
+                    "import * as Inputs from '../../inputs';",
+                );
+            }
+            return str;
+        },
+        builderImporter: "import {builder} from '../builder'"
     },
 };
+
+//src/graphql/__generated__/inputs.ts

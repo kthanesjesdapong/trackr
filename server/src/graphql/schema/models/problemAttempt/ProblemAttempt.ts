@@ -1,5 +1,5 @@
 import { builder } from "../../builder";
-
+import * as Inputs from '../../inputs';
 
 // export const ProblemAttempts
 
@@ -8,7 +8,7 @@ export const ProblemAttempt = builder.prismaNode('ProblemAttempt', {
   fields: (t) => ({
     frontendId: t.exposeInt('frontendId'),
     createdAt: t.expose('createdAt', {
-      type: 'Date'
+      type: Inputs.DateTime
     }),
     //Connect ID of the problem you are querying for
     problemId: t.relation('problem'),

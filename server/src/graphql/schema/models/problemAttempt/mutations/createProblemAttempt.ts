@@ -1,24 +1,22 @@
 import { builder } from '../../../builder';
+import { ProblemAttemptCreateInput } from '../../../inputs/index';
 
-builder.mutationField('createProblemAttempt', (t) => t.prismaField({
+
+builder.mutationField('createOneProblemAttempt', (t) => t.prismaField({
   type: 'ProblemAttempt',
   args: {
-    problemId: t.arg.int({ required: true }),
-    attemptDetailId: t.arg.int({ required: true }),
-    userId: t.arg.string({ required: true }),
-    status: t.arg.string({ required: true }),
+    data: t.arg({ type: ProblemAttemptCreateInput, required: true })
   },
   resolve: async (query, root, args, context, info) => {
     const createdProblemAttempt = await context.prisma.problemAttempt.create({
-      data: {
-        ...query,
-        problemId: args.problemId,
-        attemptDetailId: args.attemptDetailId
-      },
+      data: args.data,
+      ...query
     });
     return createdProblemAttempt;
   }
-}))
+}));
+
+
 
 
 

@@ -1,4 +1,6 @@
 import { builder } from "../../builder";
+import * as Inputs from '../../inputs/index';
+
 
 
 export const ProblemAttemptDetails = builder.prismaNode('ProblemAttemptDetails', {
@@ -8,7 +10,7 @@ export const ProblemAttemptDetails = builder.prismaNode('ProblemAttemptDetails',
     //problemAttemptId - will give you the id of attempted problem
     status: t.exposeString('status'),
     createdAt: t.expose('createdAt', {
-      type: 'Date'
+      type: Inputs.DateTime
     })
   })
 });
