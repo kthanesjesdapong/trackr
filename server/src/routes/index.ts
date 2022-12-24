@@ -7,5 +7,4 @@ import { getProblemSetHandler } from '../controller/problem.controller';
 export default function routes(app: Express) {
   //Mounting endpoint for LeetCode API Req
   app.get('/', getProblemSetHandler);
-
 }

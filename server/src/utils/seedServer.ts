@@ -7,7 +7,7 @@ import routes from '../routes/index';
 const app = express();
 const SEED_PORT = config.get<number>('SEED_PORT');
 
-const seedServer = async () => {
+const seedServer = async (): Promise<void> => {
   app.listen(SEED_PORT, async () => {
     logger.info('Line 13, seedServer Func, seedServer/');
     routes(app);

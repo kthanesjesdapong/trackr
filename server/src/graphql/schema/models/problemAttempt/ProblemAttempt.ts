@@ -2,7 +2,6 @@ import { builder } from "../../builder";
 import * as Inputs from '../../inputs';
 
 // export const ProblemAttempts
-
 export const ProblemAttempt = builder.prismaNode('ProblemAttempt', {
   id: { field: 'id' },
   fields: (t) => ({
