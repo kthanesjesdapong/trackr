@@ -15,8 +15,6 @@ builder.mutationField('createOneProblemAttempt', (t) => t.prismaField({
     return createdProblemAttempt;
   }
 }));
-
-
 /*
 
 // this is a nested create, so create problem attemptDetail and then connect the current problemAttempt with the attemptDetailId

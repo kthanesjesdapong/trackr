@@ -1,12 +1,13 @@
 import { builder } from '../../../builder';
-import { User } from '../User';
+import { User } from '@prisma/client';
 
 
 
-builder.mutationField('createUser', (t) => t.prismaField({
-  type: User,
+
+export const createOneUser = builder.mutationField('createUser', (t) => t.prismaField({
+  type: 'User',
   args: { id: t.arg.string({ required: true }) },
-  resolve: async (query, root, args, context, info) => {
+  resolve: async (query, root, args, context, info): Promise<User> => {
     const createdUser = await context.prisma.user.create({
       data: {
         id: args.id

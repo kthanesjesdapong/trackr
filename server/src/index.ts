@@ -25,13 +25,24 @@ const httpServer = http.createServer(app);
 
 app.use(express.json());
 
-// Apollo Server initialization, plus drain plugin for our httpServer
-const server = async () => {
 
-  const apolloServer = new ApolloServer<IPrismaContext>({
-    schema: schema,
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
-  });
+
+export const apolloServerConfig = {
+  schema: schema,
+  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })]
+};
+
+
+// Apollo Server initialization, plus drain plugin for our httpServer
+export const server = async () => {
+
+  const apolloServer = new ApolloServer<IPrismaContext>(apolloServerConfig
+    //   {
+    //   schema: schema,
+    //   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    // }
+
+  );
   await apolloServer.start();
 
   // Set up our Express middleware to handle CORS, body parsing,
