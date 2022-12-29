@@ -2,7 +2,8 @@ import { Problem } from "@prisma/client";
 import { builder } from "../../../builder";
 
 
-builder.queryField('problems', (t) => t.prismaConnection({
+//FieldBuilder
+builder.queryField('allProblems', (t) => t.prismaConnection({
   type: 'Problem',
   cursor: 'id',
   defaultSize: 50,

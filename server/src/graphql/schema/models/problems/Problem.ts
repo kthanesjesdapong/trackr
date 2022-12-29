@@ -3,6 +3,7 @@ import { builder } from "../../builder";
 // export const TopicOnProblemsRef = builder.objectRef('TopicOnProblems');
 // TopicOnProblemsRef.implement;
 
+//This is the fieldBuilder
 export const Problem = builder.prismaNode('Problem', {
   id: { field: 'id' },
   findUnique: (id) => ({ id: Number.parseInt(id, 10) }),

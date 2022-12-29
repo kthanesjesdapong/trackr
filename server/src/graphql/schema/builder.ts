@@ -14,9 +14,6 @@ import MocksPlugin from '@pothos/plugin-mocks';
 export const builder = new SchemaBuilder<{
   Context: IPrismaContext,
   Scalars: Scalars<Prisma.Decimal, Prisma.InputJsonValue | null, Prisma.InputJsonValue>;
-  // Scalars: {
-  //   Date: { Input: Date; Output: Date; },
-  // };
   PrismaTypes: PrismaTypes;
 }>({
   plugins: [MocksPlugin, PrismaPlugin, RelayPlugin],
@@ -39,9 +36,8 @@ export const builder = new SchemaBuilder<{
 //init queryType
 builder.queryType({});
 
-//init 
-// builder.mutationType({});
-mocks: { builder.mutationType({}); }
+//init mutationType
+builder.mutationType({});
 
 //gQL doesnt have DATE type.
 // builder.addScalarType("Date", DateResolver, {});
