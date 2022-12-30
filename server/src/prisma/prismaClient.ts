@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import logger from '../utils/logger';
 
 
-export const prisma = new PrismaClient();
+export const prisma: PrismaClient = new PrismaClient();
 
 
 async function connect(): Promise<void> {

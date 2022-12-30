@@ -8,26 +8,26 @@ import { expressMiddleware } from '@apollo/server/express4';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { prisma } from './prisma/prismaClient';
-import { IPrismaContext } from './interfaces/IPrismaContext';
 export * from './utils/seedServer';
 import apolloServerConfig from './config/apolloServerConfig';
 import { httpServer } from './config/apolloServerConfig';
 import { app } from './config/apolloServerConfig';
-
+import { PrismaClient } from '@prisma/client';
+//Line 28, ApolloServer<IPrismaContext>;
+import { IPrismaContext } from './interfaces/IPrismaContext';
 
 const port = config.get<number>('port');
 
 
 app.use(express.json());
 
-
+// <IPrismaContext>
 // Apollo Server initialization, plus drain plugin for our httpServer
 export const server = async () => {
-
-  const apolloServer = new ApolloServer<IPrismaContext>(apolloServerConfig
+  // The generic type tells our ApolloServer what the type of our context will be
+  const apolloServer = new ApolloServer<PrismaClient>(apolloServerConfig
   );
   await apolloServer.start();
-
   // Set up our Express middleware to handle CORS, body parsing,
   // and our expressMiddleware function.
   app.use(
@@ -37,9 +37,12 @@ export const server = async () => {
     // expressMiddleware accepts the same arguments:
     // an Apollo Server instance and optional configuration options
     expressMiddleware(apolloServer, {
-      context: async () => ({
-        prisma: prisma,
-      }),
+      //Share data throughout your server
+      //With IPrismaContext set as the type for ApolloServer, wrapping () around {} after the arrow works
+      context: async () => {
+        //Sources for fetching data
+        return prisma;
+      },
     }),
   );
   await new Promise<void>((resolve) => httpServer.listen({
