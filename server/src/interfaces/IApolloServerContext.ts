@@ -1,6 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import { IPrismaContext } from "./IPrismaContext";
 
 //Put later into startserver to createContext
 export interface IApolloServerContext {
-  prisma: PrismaClient;
+  prismaContext: IPrismaContext;
 }

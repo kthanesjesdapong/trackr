@@ -3,12 +3,10 @@ import PrismaPlugin from '@pothos/plugin-prisma';
 import RelayPlugin from '@pothos/plugin-relay';
 import type PrismaTypes from '@pothos/plugin-prisma/generated';
 import { prisma } from '../../prisma/client';
-import { IPrismaContext } from '../../prisma/IPrismaContext';
+import { IPrismaContext } from '../../interfaces/IPrismaContext';
 import { Prisma } from '.prisma/client';
 import { Scalars } from 'prisma-generator-pothos-codegen';
-import MocksPlugin from '@pothos/plugin-mocks';
 
-// 4:16 PM added Mocks Plugin and imported it
 
 //Setting up genereric for custom scalars
 export const builder = new SchemaBuilder<{
@@ -16,7 +14,7 @@ export const builder = new SchemaBuilder<{
   Scalars: Scalars<Prisma.Decimal, Prisma.InputJsonValue | null, Prisma.InputJsonValue>;
   PrismaTypes: PrismaTypes;
 }>({
-  plugins: [MocksPlugin, PrismaPlugin, RelayPlugin],
+  plugins: [PrismaPlugin, RelayPlugin],
   relayOptions: {
     clientMutationId: 'omit',
     cursorType: 'ID',
@@ -27,7 +25,11 @@ export const builder = new SchemaBuilder<{
   }
 });
 
+// Sometimes Prisma Types aren't generated properly when, so you may need to remove node modules and do a clean yarn install
 
+//Also run yarn generate and yarn migration
+
+// Re inputting Prisma Types will sometimes fix the issue.
 
 
 

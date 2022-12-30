@@ -29,4 +29,3 @@ module.exports = {
     },
 };
 
-//src/graphql/__generated__/inputs.ts

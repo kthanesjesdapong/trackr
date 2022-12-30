@@ -11,7 +11,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import { schema } from './graphql/schema/schema';
 import { prisma } from './prisma/client';
-import { IPrismaContext } from './prisma/IPrismaContext';
+import { IPrismaContext } from './interfaces/IPrismaContext';
 export * from './utils/seedServer';
 
 
