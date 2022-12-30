@@ -2,7 +2,7 @@ import SchemaBuilder from '@pothos/core';
 import PrismaPlugin from '@pothos/plugin-prisma';
 import RelayPlugin from '@pothos/plugin-relay';
 import type PrismaTypes from '@pothos/plugin-prisma/generated';
-import { prisma } from '../../prisma/client';
+import { prisma } from '../../prisma/prismaClient';
 import { IPrismaContext } from '../../interfaces/IPrismaContext';
 import { Prisma } from '.prisma/client';
 import { Scalars } from 'prisma-generator-pothos-codegen';
