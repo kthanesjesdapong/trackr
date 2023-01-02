@@ -9,7 +9,7 @@
     "migration": "npx prisma migrate dev",
     "seed": "ts-node ./src/utils/seed.ts",
     "generate": "npx prisma generate",
-    "test": "yarn test",
+    "test": "jest test",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },

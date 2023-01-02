@@ -25,7 +25,7 @@ app.use(express.json());
 // Apollo Server initialization, plus drain plugin for our httpServer
 export const server = async () => {
   // The generic type tells our ApolloServer what the type of our context will be
-  const apolloServer = new ApolloServer<PrismaClient>(apolloServerConfig
+  const apolloServer = new ApolloServer<IPrismaContext>(apolloServerConfig
   );
   await apolloServer.start();
   // Set up our Express middleware to handle CORS, body parsing,
@@ -39,10 +39,10 @@ export const server = async () => {
     expressMiddleware(apolloServer, {
       //Share data throughout your server
       //With IPrismaContext set as the type for ApolloServer, wrapping () around {} after the arrow works
-      context: async () => {
+      context: async () => ({
         //Sources for fetching data
-        return prisma;
-      },
+        prisma: prisma
+      }),
     }),
   );
   await new Promise<void>((resolve) => httpServer.listen({
