@@ -5,7 +5,7 @@ builder.queryField('problemsOnDifficulty', (t) => t.prismaConnection({
   type: Problem,
   cursor: 'id',
   args: {
-    diffuculty: t.arg.string({ required: true })
+    difficulty: t.arg.string({ required: true })
   },
   defaultSize: 20,
   resolve: (query, parent, args, context, info) => context.prisma.problem.findMany({
@@ -14,7 +14,7 @@ builder.queryField('problemsOnDifficulty', (t) => t.prismaConnection({
       id: 'asc'
     }],
     where: {
-      difficulty: args.diffuculty
+      difficulty: args.difficulty
     },
     include: { topics: true }
   }),
