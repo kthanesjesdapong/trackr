@@ -19,11 +19,6 @@ const apolloServerConfig = {
 
 export default apolloServerConfig;
 
-//the context in apolloServerContext is a prismaContext for the apolloServer
-
-
-//In v3 you could provide an initial context to your resolvers by adding a context initialization function to the ApolloServer Constructor
-
 //In v4 the context fc is a named arg passed into your web integration func (expressMiddleware())
 
 //Apollo Server has generic type param

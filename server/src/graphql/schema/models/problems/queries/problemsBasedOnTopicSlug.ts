@@ -9,20 +9,23 @@ builder.queryField('problemsBasedOnTopicSlug', (t) => t.prismaConnection({
     topicSlug: t.arg.stringList({ required: true })
   },
   defaultSize: 20,
-  resolve: (query, parent, args, context, info): Promise<Problem[]> => context.prisma.problem.findMany({
-    ...query,
-    orderBy: [{
-      id: 'asc'
-    }],
-    where: {
-      topics: {
-        some: {
-          topicSlug: {
-            in: args.topicSlug
+  resolve: async (query, parent, args, context, info): Promise<Problem[]> => {
+    const problemBasedOnTopicSlug = await context.prisma.problem.findMany({
+      ...query,
+      orderBy: [{
+        id: 'asc'
+      }],
+      where: {
+        topics: {
+          some: {
+            topicSlug: {
+              in: args.topicSlug
+            }
           }
         }
-      }
-    },
-    include: { topics: true }
-  }),
+      },
+      include: { topics: true }
+    });
+    return problemBasedOnTopicSlug;
+  },
 }));

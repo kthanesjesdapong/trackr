@@ -8,14 +8,17 @@ builder.queryField('problemsOnDifficulty', (t) => t.prismaConnection({
     difficulty: t.arg.string({ required: true })
   },
   defaultSize: 20,
-  resolve: (query, parent, args, context, info): Promise<Problem[]> => context.prisma.problem.findMany({
-    ...query,
-    orderBy: [{
-      id: 'asc'
-    }],
-    where: {
-      difficulty: args.difficulty
-    },
-    include: { topics: true }
-  }),
+  resolve: async (query, parent, args, context, info): Promise<Problem[]> => {
+    const problemBasedOnDifficulty = await context.prisma.problem.findMany({
+      ...query,
+      orderBy: [{
+        id: 'asc'
+      }],
+      where: {
+        difficulty: args.difficulty
+      },
+      include: { topics: true }
+    });
+    return problemBasedOnDifficulty;
+  },
 }));

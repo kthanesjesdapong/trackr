@@ -3,14 +3,13 @@ import PrismaPlugin from '@pothos/plugin-prisma';
 import RelayPlugin from '@pothos/plugin-relay';
 import type PrismaTypes from '@pothos/plugin-prisma/generated';
 import { prisma } from '../../prisma/prismaClient';
-import { IPrismaContext } from '../../interfaces/IPrismaContext';
+import { IContext } from '../../interfaces/IContext';
 import { Prisma } from '.prisma/client';
 import { Scalars } from 'prisma-generator-pothos-codegen';
 
-
 //Setting up genereric for custom scalars
 export const builder = new SchemaBuilder<{
-  Context: IPrismaContext,
+  Context: IContext,
   Scalars: Scalars<Prisma.Decimal, Prisma.InputJsonValue | null, Prisma.InputJsonValue>;
   PrismaTypes: PrismaTypes;
 }>({

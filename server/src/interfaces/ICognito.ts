@@ -1,6 +1,6 @@
 import { AttributeType } from "@aws-sdk/client-cognito-identity-provider";
 
-
+//Cognito types and Interfaces
 
 export type AuthParameters = {
   USERNAME: string;
