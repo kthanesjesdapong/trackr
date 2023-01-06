@@ -1,5 +1,5 @@
 import { AttributeType } from "@aws-sdk/client-cognito-identity-provider";
-
+import { userAttribute } from '../graphql/schema/models/users/mutations/createUser';
 //Cognito types and Interfaces
 
 export type AuthParameters = {
@@ -26,3 +26,4 @@ export interface UserLogInInput {
   password: string;
 }
 
+//userAttribute: [Name: "string", Value: "string"]

@@ -10,4 +10,16 @@ export const buildTopicMap = (arrOfTopics: typeof topics): Map<string, number> =
   return topicMap;
 };
 export const topicMap = buildTopicMap(topics);
-console.log(topicMap);
+
+
+//args.Name && args.Value
+export const buildUserAttributeArray = (nameArr: Array<string>, valueArr: Array<string>) => {
+
+  const attArr = nameArr.map((element, i) => {
+    return {
+      Name: nameArr[i],
+      Value: valueArr[i]
+    };
+  });
+  return attArr;
+};
