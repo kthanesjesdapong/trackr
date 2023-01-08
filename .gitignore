@@ -52,7 +52,7 @@ typings/
 #seed.ts
 server/src/utils/seed.ts
 
-
+*.test.ts.snap
 yarn-error.log/
 vendor/
 tmp/
@@ -71,3 +71,10 @@ experimental/**/*.db
 
 dev.db
 *.env*
+
+
+#tests
+server/src/tests/__snapshots
+
+#aws config
+server/aws.config.ts

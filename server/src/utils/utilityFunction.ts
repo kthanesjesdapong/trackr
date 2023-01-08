@@ -12,7 +12,7 @@ export const buildTopicMap = (arrOfTopics: typeof topics): Map<string, number> =
 export const topicMap = buildTopicMap(topics);
 
 
-//args.Name && args.Value
+//Passed to createUser's resolver to get UserAttributes
 export const buildUserAttributeArray = (nameArr: Array<string>, valueArr: Array<string>) => {
 
   const attArr = nameArr.map((element, i) => {
