@@ -1,7 +1,8 @@
 import { gql } from "graphql-tag";
-import { sendTestRequest } from "./testUtils"; // Make sure this points to the file we created earlier!
+import { sendTestRequest } from "./testUtils";
 
-it("Example", async () => {
+
+it("Fetches All Problems", async () => {
   const PROBLEM = gql`
   query Problems {
     allProblems {
@@ -35,13 +36,8 @@ it("Example", async () => {
     }
   }`;
 
-  console.log('hello');
+
   const response = await sendTestRequest(PROBLEM);
-  expect(response).toMatchSnapshot();
+  expect(response.data).toMatchSnapshot();
   console.log(response);
-  // expect(response).toEqual({
-  //   data: {
-  //     __typename: "Query",
-  //   },
-  // });
 });
