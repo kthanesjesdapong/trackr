@@ -2,21 +2,10 @@ import { builder } from '../../../builder';
 import { formSignUpCommand } from '../../../../../service/user.service';
 import { buildUserAttributeArray } from '../../../../../utils/utilityFunction';
 
-
-
-//Create userInputType, create Arr
-export const userAttribute = builder.inputType('userAttribute', {
-  fields: (t) => ({
-    Name: t.string({ required: true }),
-    Value: t.string({ required: true })
-  }),
-});
-
-
-
-
+//Uses Cognito Client and Prisma Client to create user
 export const createOneUser = builder.mutationField('createUser', (t) => t.prismaField({
   type: 'User',
+  description: "creates User",
   args: {
     id: t.arg.string({ required: true }),
     email: t.arg.string({ required: true }),
@@ -38,14 +27,9 @@ export const createOneUser = builder.mutationField('createUser', (t) => t.prisma
     };
 
     const registeredUser = formSignUpCommand(userSignUpInput);
+    //Sends command to Cognito Client
     const createdCognitoUser = await context.cognito.send(registeredUser);
 
-
-    if (createdCognitoUser.$metadata.httpStatusCode !== 200)
-
-
-
-      console.log(createdCognitoUser);
     const createdUser = await context.prisma.user.create({
       data: {
         id: args.id

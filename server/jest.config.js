@@ -8,7 +8,7 @@ module.exports = {
     //Array of glob patterns indicating a set of files for which coverage info should be collected
     //src/**/ *.{js,ts}
     collectCoverageFrom: ['src/**/*.{js,ts}'],
-
+    // collectCoverageFrom: ['src/graphql/schema/']
     // If we're using absolute import paths we can turn this config on
 
     // moduleNameMapper: {

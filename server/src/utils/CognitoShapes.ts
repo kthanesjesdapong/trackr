@@ -1,6 +1,5 @@
 import { AuthParameters } from '../interfaces/ICognito';
 import { AttributeType } from "@aws-sdk/client-cognito-identity-provider";
-import { userAttribute } from '../graphql/schema/models/users/mutations/createUser';
 
 
 import { USER_POOL_LOGIN, USERPOOL_INFO, USER_PASSWORD_AUTH } from '../../aws.config';
