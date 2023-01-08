@@ -4,7 +4,7 @@ import RelayPlugin from '@pothos/plugin-relay';
 import type PrismaTypes from '@pothos/plugin-prisma/generated';
 import { prisma } from '../../prisma/prismaClient';
 import { IContext } from '../../interfaces/IContext';
-import { Prisma } from '.prisma/client';
+import { Prisma } from '@prisma/client';
 import { Scalars } from 'prisma-generator-pothos-codegen';
 
 //Setting up genereric for custom scalars
