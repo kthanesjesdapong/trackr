@@ -77,5 +77,4 @@ dev.db
 server/src/tests/__snapshots
 
 #aws config
-server/aws/config
-
+server/aws.config.ts
