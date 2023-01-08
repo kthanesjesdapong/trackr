@@ -1,4 +1,3 @@
-// line 7-9 are variables you need to fill in
 const problemSetQuery = `
 query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {
   questionList(

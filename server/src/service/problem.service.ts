@@ -3,10 +3,6 @@ import { Prisma, PrismaClient } from '@prisma/client';
 
 
 
-//This is where the work is executed
-//Business logic lives in service
-//Think of this as the place where you're creating the skeleton of your functions, without the real args passed in
-
 //getProblems,addTopics,addProblem are used to seed data from leetcodeAPI
 export async function getProblems(client: any, query: String, problemSetVariable: ProblemSetVariable): Promise<ProblemList | undefined> {
   //pass in the req.body once you have a forum component
