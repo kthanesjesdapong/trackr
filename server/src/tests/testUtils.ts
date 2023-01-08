@@ -36,11 +36,6 @@ const createServer = async () => {
       context: async () => (apolloServerContext),
     }),
   );
-  await new Promise<void>((resolve) => httpServer.listen({
-    port: 8080
-  }, () => {
-  }));
-
   return httpServer;
 };
 
