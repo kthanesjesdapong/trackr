@@ -4,6 +4,7 @@ import * as Inputs from '../../inputs/index';
 //using prismaObject and not node because we do not need to paginate users. 
 export const User = builder.prismaObject('User', {
   fields: (t) => ({
+    //This is supposed to be email
     id: t.exposeID('id'),
     //Defined Date type within builder.ts
     registeredAt: t.expose('registeredAt', {

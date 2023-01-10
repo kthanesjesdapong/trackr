@@ -12,14 +12,6 @@ export const getInitiateAuthReqInputs = (obj: UserLogInInput): InitiateAuthReque
   return initiateAuthRequestInput;
 };
 
-export const getUserIdentityPools = async (tokenId: string) => {
-  const loginPropInput = new LoginPropInput(tokenId);
-  try {
-
-  } catch (e: any) {
-    console.log(e);
-  }
-};
 
 
 

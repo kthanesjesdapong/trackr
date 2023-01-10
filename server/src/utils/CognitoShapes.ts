@@ -6,7 +6,7 @@ import { USER_POOL_LOGIN, USERPOOL_INFO, USER_PASSWORD_AUTH } from '../../aws.co
 
 const { USERPOOL_ID, CLIENT_ID } = USERPOOL_INFO;
 
-
+//Classes to Form our InputShape
 export class SignUpCommandInput {
   ClientId: string;
   Username: string;
@@ -24,8 +24,10 @@ export class SignUpCommandInput {
 export class InitiateAuthRequestInput {
   AuthParameters: AuthParameters;
   ClientId: string;
+  AuthFlow: string;
   constructor(username: string, password: string) {
     this.ClientId = CLIENT_ID;
+    this.AuthFlow = USER_PASSWORD_AUTH;
     this.AuthParameters = {
       USERNAME: username,
       PASSWORD: password

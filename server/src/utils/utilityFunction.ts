@@ -1,4 +1,8 @@
 import { topics } from "../constants/topics";
+import { fromCognitoIdentityPool, CognitoIdentityCredentialProvider } from "@aws-sdk/credential-providers";
+import { IDENTITY_POOL_ID, REGION } from "../../aws.config";
+import { LoginPropInput } from "./CognitoShapes";
+
 
 //Builds map, and is called in problem.service in order to reassign responseId
 export const buildTopicMap = (arrOfTopics: typeof topics): Map<string, number> => {
@@ -22,4 +26,16 @@ export const buildUserAttributeArray = (nameArr: Array<string>, valueArr: Array<
     };
   });
   return attArr;
+};
+
+
+//Collect tokenId after user attempts to login
+export const formCredentials = async (tokenId: string): Promise<CognitoIdentityCredentialProvider> => {
+  const login = new LoginPropInput(tokenId);
+  const credentials = fromCognitoIdentityPool({
+    identityPoolId: IDENTITY_POOL_ID,
+    clientConfig: { region: REGION },
+    logins: login
+  });
+  return credentials;
 };
