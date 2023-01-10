@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@apollo/server": "^4.2.2",
+    "@aws-sdk/client-cognito-identity": "^3.245.0",
     "@aws-sdk/client-cognito-identity-provider": "^3.241.0",
     "@aws-sdk/client-dynamodb": "^3.215.0",
     "@aws-sdk/credential-providers": "^3.215.0",

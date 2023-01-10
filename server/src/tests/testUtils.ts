@@ -1,5 +1,5 @@
 import { ApolloServer } from '@apollo/server';
-import express from "express";
+import express, { Request, Response } from "express";
 import { DocumentNode, print } from "graphql";
 import http from "http";
 import { IContext } from '../interfaces/IContext';
@@ -49,8 +49,11 @@ export const sendTestRequest = async (
     headers?: { [key: string]: string; };
   } = {}
 ): Promise<any> => {
+
   const server = cachedServer ?? (await createServer());
   cachedServer = server;
+
+  console.log(headers);
   const requestBuilder = request(server).post("/graphql");
 
   Object.entries(headers).forEach(([key, value]) => {
@@ -58,7 +61,8 @@ export const sendTestRequest = async (
   });
   const { text } = await requestBuilder.send({
     variables,
-    query: print(query),
+    query: print(query)
   });
+
   return JSON.parse(text);
 };
