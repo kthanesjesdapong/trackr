@@ -1,4 +1,4 @@
-import { AuthParameters } from '../interfaces/ICognito';
+import { AuthParameters } from '@interfaces/ICognito';
 import { AttributeType } from "@aws-sdk/client-cognito-identity-provider";
 
 

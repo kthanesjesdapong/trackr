@@ -1,1 +1,1 @@
-export * from './login';
+export * from '@graphql/schema/models/users/queries/login';

@@ -1,6 +1,7 @@
-import { builder } from '../../../builder';
-import { formSignUpCommand } from '../../../../../service/user.service';
-import { buildUserAttributeArray } from '../../../../../utils/utilityFunction';
+
+import { builder } from '@graphql/schema/builder';
+import { formSignUpCommand } from '@service/user.service';
+import { buildUserAttributeArray } from '@utils/utilityFunction';
 import { Prisma, PrismaClient } from '@prisma/client';
 
 //Uses Cognito Client and Prisma Client to create user

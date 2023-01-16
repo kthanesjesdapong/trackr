@@ -1,5 +1,6 @@
-import { builder } from "../../builder";
-import * as Inputs from '../../inputs/index';
+import { builder } from '@graphql/schema/builder';
+import * as Inputs from "@graphql/schema/inputs";
+
 
 //using prismaObject and not node because we do not need to paginate users. 
 export const User = builder.prismaObject('User', {

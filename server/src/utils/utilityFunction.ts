@@ -1,7 +1,7 @@
-import { topics } from "../constants/topics";
+import { topics } from "@constants/topics";
 import { fromCognitoIdentityPool, CognitoIdentityCredentialProvider } from "@aws-sdk/credential-providers";
-import { IDENTITY_POOL_ID, REGION } from "../../aws.config";
-import { LoginPropInput } from "./CognitoShapes";
+import { IDENTITY_POOL_ID, REGION } from "@awsConfig";
+import { LoginPropInput } from "@utils/CognitoShapes";
 
 
 //Builds map, and is called in problem.service in order to reassign responseId

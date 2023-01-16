@@ -1,4 +1,4 @@
-import { builder } from '../../../builder';
+import { builder } from '@graphql/schema/builder';
 import { ProblemAttempt } from '@prisma/client';
 
 

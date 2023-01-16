@@ -1,1 +1,1 @@
-export * from './createProblemAttempt';
+export * from '@graphql/schema/models/problemAttempt/mutations/createProblemAttempt';

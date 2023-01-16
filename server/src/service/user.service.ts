@@ -1,10 +1,9 @@
-import { SignUpCommandInput, InitiateAuthRequestInput, LoginPropInput } from "../utils/CognitoShapes";
-import { UserLogInInput, UserSignUpInput } from "../interfaces/ICognito";
 import { InitiateAuthCommand, SignUpCommand } from "@aws-sdk/client-cognito-identity-provider";
-
 import { CognitoIdentityClient } from "@aws-sdk/client-cognito-identity";
 import { fromCognitoIdentityPool } from "@aws-sdk/credential-providers";
-import { REGION, USER_POOL_LOGIN, IDENTITY_POOL_ID } from "../../aws.config";
+import { SignUpCommandInput, InitiateAuthRequestInput, LoginPropInput } from "@utils/CognitoShapes";
+import { UserLogInInput, UserSignUpInput } from "@interfaces/ICognito";
+import { REGION, USER_POOL_LOGIN, IDENTITY_POOL_ID } from "@awsConfig";
 
 //Forms User Inputs for SignUpCommand
 export const getUserInputs = (obj: UserSignUpInput): SignUpCommandInput => {

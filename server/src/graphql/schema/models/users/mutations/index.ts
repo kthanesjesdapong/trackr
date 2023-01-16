@@ -1,1 +1,1 @@
-export * from './createUser';
+export * from '@graphql/schema/models/users/mutations/createUser';

@@ -1,4 +1,4 @@
-import { builder } from "../../../builder";
+import { builder } from '@graphql/schema/builder';
 import { Problem } from '@prisma/client';
 
 builder.queryField('problemsBasedOnTopicSlug', (t) => t.prismaConnection({

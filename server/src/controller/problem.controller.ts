@@ -1,7 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
-import { getProblems } from '../service/problem.service';
-import { client } from '../utils/gqlClient';
-import problemSetQuery from '../constants/problemSetList';
+import { getProblems } from '@service/problem.service';
+import { client } from '@utils/gqlClient';
+import problemSetQuery from '@constants/problemSetList';
+
 
 const variables = {
   categorySlug: "algorithms",

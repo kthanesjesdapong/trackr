@@ -1,5 +1,5 @@
-import { SignUpCommandInput, InitiateAuthRequestInput, LoginPropInput } from "./CognitoShapes";
-import { UserLogInInput, UserSignUpInput } from "../interfaces/ICognito";
+import { SignUpCommandInput, InitiateAuthRequestInput, LoginPropInput } from "@utils/CognitoShapes";
+import { UserLogInInput, UserSignUpInput } from "@interfaces/ICognito";
 
 
 export const getUserInputs = (obj: UserSignUpInput): SignUpCommandInput => {

@@ -1,2 +1,2 @@
-export * from '../../models/users/mutations/index';
-export * from '../../models/problemAttempt/mutations/index';
+export * from '@graphql/schema/models/users/mutations/index';
+export * from '@graphql/schema/models/problemAttempt/mutations/index';

@@ -1,7 +1,7 @@
-import { builder } from "../../builder";
-import * as Inputs from '../../inputs';
+import { builder } from '@graphql/schema/builder';
+import * as Inputs from '@graphql/schema/inputs';
 
-// export const ProblemAttempts
+
 export const ProblemAttempt = builder.prismaNode('ProblemAttempt', {
   id: { field: 'id' },
   fields: (t) => ({

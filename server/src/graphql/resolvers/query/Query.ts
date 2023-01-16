@@ -1,1 +1,0 @@
-export * from '../../../graphql/schema/models/problems/queries/index';

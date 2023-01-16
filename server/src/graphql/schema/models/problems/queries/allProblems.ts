@@ -1,14 +1,13 @@
-// import { Problem } from "@prisma/client";
-import { builder } from "../../../builder";
+import { Problem } from "@prisma/client";
+import { builder } from '@graphql/schema/builder';
 
-//: Promise<Problem[]>
 
 //FieldBuilder
 builder.queryField('allProblems', (t) => t.prismaConnection({
   type: 'Problem',
   cursor: 'id',
   defaultSize: 50,
-  resolve: async (query, parent, args, context, info) => {
+  resolve: async (query, parent, args, context, info): Promise<Problem[]> => {
     const allProblems = await context.prisma.problem.findMany({
       ...query,
       orderBy: [{

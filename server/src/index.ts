@@ -1,18 +1,18 @@
 import 'dotenv/config';
 import express from 'express';
-import logger from './utils/logger';
+import logger from '@utils/logger';
 import config from "config";
-import connect from './prisma/prismaClient';
+import connect from '$prisma/prismaClient';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-export * from './utils/seedServer';
-import { httpServer } from './config/apolloServerConfig';
-import { app } from './config/apolloServerConfig';
-import apolloServerConfig from './config/apolloServerConfig';
-import { IContext } from './interfaces/IContext';
-import apolloServerContext from './config/apolloContext';
+export * from '@utils/seedServer';
+import { httpServer } from '@config/apolloServerConfig';
+import { app } from '@config/apolloServerConfig';
+import apolloServerConfig from '@config/apolloServerConfig';
+import { IContext } from '@interfaces/IContext';
+import apolloServerContext from '@config/apolloContext';
 const port = config.get<number>('port');
 
 

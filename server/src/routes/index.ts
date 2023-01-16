@@ -1,5 +1,5 @@
 import { Express } from 'express';
-import { getProblemSetHandler } from '../controller/problem.controller';
+import { getProblemSetHandler } from '@controller/problem.controller';
 
 
 

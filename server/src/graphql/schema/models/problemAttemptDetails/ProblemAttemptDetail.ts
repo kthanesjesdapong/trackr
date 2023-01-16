@@ -1,5 +1,5 @@
-import { builder } from "../../builder";
-import * as Inputs from '../../inputs/index';
+import { builder } from '@graphql/schema/builder';
+import * as Inputs from "@graphql/schema/inputs";
 
 
 

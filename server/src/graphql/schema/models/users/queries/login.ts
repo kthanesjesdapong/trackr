@@ -1,5 +1,6 @@
-import { builder } from "../../../builder";
-import { initiateAuthCommand, getUserIdentityPools } from '../../../../../service/user.service';
+import { builder } from '@graphql/schema/builder';
+import { initiateAuthCommand, getUserIdentityPools } from '@service/user.service';
+
 
 
 

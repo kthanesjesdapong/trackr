@@ -1,6 +1,10 @@
-export * from './problems/Problem';
-export * from './topics/Topic';
-export * from './problems/TopicOnProblems';
-export * from './users/User';
-export * from './problemAttempt/ProblemAttempt';
-export * from './problemAttemptDetails/ProblemAttemptDetail';
+export * from '@graphql/schema/models/problems/Problem';
+export * from '@graphql/schema/models/topics/Topic';
+export * from '@graphql/schema/models/problems/TopicOnProblems';
+export * from '@graphql/schema/models/users/User';
+export * from '@graphql/schema/models/problemAttempt/ProblemAttempt';
+export * from '@graphql/schema/models/problemAttemptDetails/ProblemAttemptDetail'
+
+
+
+

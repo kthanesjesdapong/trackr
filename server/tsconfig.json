@@ -1,4 +1,9 @@
 {
+    "ts-node": {
+      "require": ["tsconfig-paths/register"],
+      "esm": true,
+      "experimentalSpecifierResolution": "node"
+    },
   "compilerOptions": {
     "outDir": "build",
     "target": "es2018",
@@ -12,6 +17,20 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["*"],
+      "@awsConfig": ["aws.config.ts"],
+      "@config/*": ["src/config/*"],
+      "@constants/*": ["src/constants/*"],
+      "@controller/*": ["src/controller/*"],
+      "@graphql/*" : ["src/graphql/*"],
+      "@interfaces/*" : ["src/interfaces/*"],
+      "$prisma/*" : ["src/prisma/*"],
+      "@routes/*" : ["src/routes/*"],
+      "@service/*" : ["src/service/*"],
+      "@utils/*": ["src/utils/*"],
+    },
   }
 }

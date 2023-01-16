@@ -1,7 +1,4 @@
-import { builder } from "../../builder";
-
-// export const TopicOnProblemsRef = builder.objectRef('TopicOnProblems');
-// TopicOnProblemsRef.implement;
+import { builder } from '@graphql/schema/builder';
 
 //This is the fieldBuilder
 export const Problem = builder.prismaNode('Problem', {
