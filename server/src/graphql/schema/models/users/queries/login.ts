@@ -38,47 +38,4 @@ export const login = builder.queryField('login', (t) => t.prismaField({
     });
     return loggedInUser;
   },
-}))
-
-
-
-
-
-
-
-/*
-
-
-
-
-
-    // const userSignInInput = {
-    //   email: args.username,
-    //   password: args.password
-    // };
-
-
-
-
-
-collect User Inputs, (inputs sent to gql)
-A user only needs their email and password to sign in
-call getInitiateAuthReqInputs
-
-
-create AuthCommand by passing in user inputs
-
-send authcommand thru context.cognito
-
-our payload should have jwt
-
-
-
-My type
-Promise<User> 
-
-Expected Type
-Promise<Maybe<User>>
-
-
-*/
+}));

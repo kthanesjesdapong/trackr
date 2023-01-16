@@ -39,3 +39,4 @@ export const formCredentials = async (tokenId: string): Promise<CognitoIdentityC
   });
   return credentials;
 };
+
