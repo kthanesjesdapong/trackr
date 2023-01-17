@@ -3,13 +3,16 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["*"],
+      "@types/*": ["/types/*"],
       // Setting up Absolute Import
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@containers/*": ["src/containers/*"],
       "@hooks/*": ["src/hooks/*"],
       "@services/*": ["src/services/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@theme/*": ["src/theme/*"]
+
     },
     "target": "ESNext",
     "useDefineForClassFields": true,

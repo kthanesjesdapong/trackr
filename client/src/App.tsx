@@ -1,15 +1,21 @@
 
 //Example of how to absolute import
 import { example } from '@components/funny';
-
+import GlobalStyles from '@styles/GlobalStyles';
 console.log(example());
 
-function App() {
+import React, { FC } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { myTheme } from './styles/DefaultTheme';
+
+export const App: FC = () => {
   return (
-    <div className="App">
-      penis
-    </div>
+    <ThemeProvider theme={myTheme}>
+      <GlobalStyles />
+      <div>PENIS</div>
+    </ThemeProvider>
   );
-}
+};
+
 
 export default App;
