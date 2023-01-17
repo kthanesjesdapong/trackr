@@ -4,7 +4,12 @@
     "paths": {
       "@/*": ["*"],
       // Setting up Absolute Import
-      "@components/*": ["src/components/*"]
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@containers/*": ["src/containers/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@services/*": ["src/services/*"],
+      "@styles/*": ["src/styles/*"]
     },
     "target": "ESNext",
     "useDefineForClassFields": true,
