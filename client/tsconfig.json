@@ -15,6 +15,7 @@
       "@services/*": ["src/services/*"],
       "@styles/*": ["src/styles/*"],
       "@theme/*": ["src/theme/*"],
+      "@utils/*": ["src/utils/*"]
       
     },
     "target": "ESNext",
