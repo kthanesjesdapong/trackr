@@ -3,16 +3,18 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["*"],
-      "@types/*": ["/types/*"],
-      // Setting up Absolute Import
-      "@assets/*": ["src/assets/*"],
+      "@src/*": ["src/*"],
+      "@types/*": ["/types/*", "vite/client", "vite-plugin-svgr/client"],
+      "@svg/*": ["/assets/svg/*"],
+      "@font/*": ["/assets/fonts/*"],
+      // src
       "@components/*": ["src/components/*"],
       "@containers/*": ["src/containers/*"],
       "@hooks/*": ["src/hooks/*"],
       "@services/*": ["src/services/*"],
       "@styles/*": ["src/styles/*"],
-      "@theme/*": ["src/theme/*"]
-
+      "@theme/*": ["src/theme/*"],
+      
     },
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -30,6 +32,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "types", "types/svg.d.ts", "/types/styled.d.ts", ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
