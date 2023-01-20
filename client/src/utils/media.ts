@@ -15,6 +15,7 @@ type BreakpointFunction = (breakpoint: Breakpoints) => string;
 
 type BetweenFunction = (firstBreakpoint: Breakpoints, secondBreakpoint: Breakpoints) => string;
 
+
 function getSizeFromBreakpoint(breakpointValue: Breakpoints) {
   if (breakpoints[breakpointValue]) {
     return breakpoints[breakpointValue];
