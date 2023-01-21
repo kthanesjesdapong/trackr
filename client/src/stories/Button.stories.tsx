@@ -39,3 +39,14 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const Blue = Template.bind({});
+Blue.args = {
+  backgroundColor: 'blue',
+  label: 'these nuts'
+};
+export const Yellow = Template.bind({});
+Yellow.args = {
+  backgroundColor: 'yellow',
+  label: 'these nuts'
+};
