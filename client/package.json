@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "sb": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "kill-sb": "npx kill-port 6006"
   },
   "dependencies": {
     "polished": "^4.2.2",
@@ -19,12 +20,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
     "@storybook/addon-links": "^6.5.15",
     "@storybook/builder-vite": "^0.3.0",
     "@storybook/react": "^6.5.15",
+    "@storybook/react-docgen-typescript-plugin": "^1.0.1",
     "@storybook/testing-library": "^0.0.13",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
@@ -32,6 +35,7 @@
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.0.0",
     "babel-loader": "^8.3.0",
+    "react-docgen-typescript": "^2.2.2",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   },

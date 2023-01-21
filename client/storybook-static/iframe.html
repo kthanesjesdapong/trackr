@@ -11,7 +11,7 @@
       window.FRAMEWORK_OPTIONS = {};
       window.CHANNEL_OPTIONS = {};
       window.FEATURES = {"postcss":true,"emotionAlias":false,"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":false,"modernInlineRender":false,"breakingChangesV7":false,"interactionsDebugger":false,"babelModeV7":true,"argTypeTargetsV7":false,"previewMdx2":false};
-      window.STORIES = [{"titlePrefix":"","directory":"./stories","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:stories(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./stories","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:stories(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];
+      window.STORIES = [{"titlePrefix":"","directory":"./src/stories","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:src\\/stories(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./src/stories","files":"**/*.stories.tsx","importPathMatcher":"^\\.[\\\\/](?:src\\/stories(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.tsx)$"}];
       window.SERVER_CHANNEL_URL = undefined;
 
       // We do this so that "module && module.hot" etc. in Storybook source code
@@ -370,12 +370,13 @@
 <script>
   window.global = window;
 </script>
-    <script type="module" crossorigin src="/assets/iframe-9d3def59.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/es.number.to-fixed-fac151d7.js">
-    <link rel="modulepreload" crossorigin href="/assets/es.number.is-nan-80174429.js">
-    <link rel="modulepreload" crossorigin href="/assets/es.number.is-integer-767474d6.js">
-    <link rel="modulepreload" crossorigin href="/assets/index-a14a5c52.js">
-    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-43cd67e8.js">
+    <script type="module" crossorigin src="/assets/iframe-03a0125c.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/index-c0974016.js">
+    <link rel="modulepreload" crossorigin href="/assets/index-681e4b07-d0bdd22e.js">
+    <link rel="modulepreload" crossorigin href="/assets/es.number.is-integer-eea4a315.js">
+    <link rel="modulepreload" crossorigin href="/assets/index-8cb0a800.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-eb1134c7.js">
+    <link rel="stylesheet" href="/assets/iframe-273a0a5e.css">
   <style>
     .sb-show-preparing-story:not(.sb-show-main) > :not(.sb-preparing-story) {
       display: none;
