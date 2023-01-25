@@ -12,7 +12,6 @@
     "kill-sb": "npx kill-port 6006"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.1",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
+    "@redux-devtools/core": "^3.13.1",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-controls": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
