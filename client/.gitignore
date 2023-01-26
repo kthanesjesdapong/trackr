@@ -16,7 +16,8 @@ dist-ssr
 gh-pages
 storybook-static/
 
-
+#storybook
+*.stories.*.*
 
 # Editor directories and files
 .vscode/*

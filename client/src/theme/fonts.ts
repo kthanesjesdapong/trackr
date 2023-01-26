@@ -3,26 +3,30 @@ import { fontFace } from 'polished';
 export const fonts = {
   ...fontFace({
     fontFamily: 'Plus Jakarta Sans',
-    fontFilePath: '/assets/fonts/PlusJakartaSans-ExtraBold.ttf',
-    fontWeight: 'extrabold',
-    fontDisplay: 'fallback'
+    fontFilePath: '/assets/fonts/PlusJakartaSans-ExtraBold',
+    fontWeight: 'regular',
+    fontDisplay: 'fallback',
+    fileFormats: ['ttf']
   }),
   ...fontFace({
     fontFamily: 'Plus Jakarta Sans',
-    fontFilePath: '/assets/fonts/PlusJakartaSans-Regular.ttf',
+    fontFilePath: '/assets/fonts/PlusJakartaSans-Regular',
     fontWeight: 'regular',
-    fontDisplay: 'fallback'
+    fontDisplay: 'fallback',
+    fileFormats: ['ttf']
   }),
   ...fontFace({
     fontFamily: 'Poppins',
-    fontFilePath: '/assets/fonts/Poppins-Regular.ttf',
+    fontFilePath: '/assets/fonts/Poppins-Regular',
     fontWeight: 'regular',
-    fontDisplay: 'fallback'
+    fontDisplay: 'fallback',
+    fileFormats: ['ttf']
   }),
   ...fontFace({
     fontFamily: 'Poppins',
-    fontFilePath: '/assets/fonts/Poppins-SemiBold.ttf',
+    fontFilePath: '/assets/fonts/Poppins-SemiBold',
     fontWeight: 'semibold',
-    fontDisplay: 'fallback'
+    fontDisplay: 'fallback',
+    fileFormats: ['ttf']
   }),
 };

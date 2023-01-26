@@ -1,7 +1,17 @@
-import React from 'react';
+import { FC } from 'react';
+import TopNavBarStyles from './TopNavBar.styles';
+import { UserContainer } from './UserContainer';
+import { LogoContainer } from './LogoContainer';
 
-export const TopNavBar: React.FC = () => {
+//dummyData
+
+export const TopNavBar: FC = () => {
     return (
-        <div>:React.FC</div>
+        <TopNavBarStyles>
+            <LogoContainer />
+            <UserContainer userId='Kavin T' />
+        </TopNavBarStyles>
     );
 };
+
+
