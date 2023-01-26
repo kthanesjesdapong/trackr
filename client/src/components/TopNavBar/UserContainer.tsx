@@ -9,7 +9,7 @@ interface IUserData {
 
 
 
-//dummyData for now
+// You'll later be going in here and changing out the dummyData with data from cognito
 export const UserContainer: FC<IUserData> = ({ userId }) => {
     return (
         <UserContainerStyles color={theme.colors.black}>
