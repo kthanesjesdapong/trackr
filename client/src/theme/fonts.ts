@@ -29,4 +29,11 @@ export const fonts = {
     fontDisplay: 'fallback',
     fileFormats: ['ttf']
   }),
+  ...fontFace({
+    fontFamily: 'Poppins Thin',
+    fontFilePath: '/assets/fonts/Poppins-Thin',
+    fontWeight: 'thin',
+    fontDisplay: 'fallback',
+    fileFormats: ['ttf']
+  }),
 };

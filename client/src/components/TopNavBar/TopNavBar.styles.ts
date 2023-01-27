@@ -6,8 +6,7 @@ const TopNavBarStyles = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px solid grey;
-  
+  border-bottom: 1px solid #D5D5D5;  
 `;
 
 export default TopNavBarStyles;

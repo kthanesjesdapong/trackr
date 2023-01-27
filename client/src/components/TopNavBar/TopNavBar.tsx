@@ -9,7 +9,7 @@ export const TopNavBar: FC = () => {
     return (
         <TopNavBarStyles>
             <LogoContainer />
-            <UserContainer userId='Kavin T' />
+            <UserContainer userId='testing@gmail.com' />
         </TopNavBarStyles>
     );
 };

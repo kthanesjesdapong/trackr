@@ -13,7 +13,7 @@ interface IUserData {
 export const UserContainer: FC<IUserData> = ({ userId }) => {
     return (
         <UserContainerStyles color={theme.colors.black}>
-            <h1 className="">{userId}</h1>
+            <p className="">{userId}</p>
         </UserContainerStyles>
     );
 };

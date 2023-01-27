@@ -7,7 +7,7 @@ width: 256px;
 height:98px;
 left: 0px;
 top: 3px;
-border-bottom: 2px solid #D5D5D5;
+/* border-bottom: .5px solid #D5D5D5; */
 display: flex;
 justify-content: center;
 align-items: center;
