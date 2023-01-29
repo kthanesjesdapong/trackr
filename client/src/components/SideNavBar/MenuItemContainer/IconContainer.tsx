@@ -1,8 +1,13 @@
-import FC from 'react';
-import { ReactSVGElement, SVGProps } from 'react';
-export const IconContainer = (props: SVGProps<SVGSVGElement>) => {
+
+import { ReactComponent as Bookmark } from '@svg/bookmark.svg';
+import IconContainerStyles from './IconContainer.styles';
+
+//ReactNode is Icon
+export const IconContainer = ({ ReactNode }: { ReactNode: typeof Bookmark; }) => {
     return (
-        <svg viewBox='' {...props}>
-        </svg>
+        <IconContainerStyles>
+            <ReactNode className='icon' />
+        </IconContainerStyles>
     );
+    ;
 };

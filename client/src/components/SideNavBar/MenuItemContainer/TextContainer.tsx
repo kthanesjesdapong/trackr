@@ -1,7 +1,10 @@
 import FC from 'react';
+import TextContainerStyles from './TextContainer.styles';
 
-export const TextContainer = () => {
+export const TextContainer = ({ text }: { text: string; }) => {
     return (
-        <div>TextContainer</div>
+        <TextContainerStyles>
+            <p>{text}</p>
+        </TextContainerStyles>
     );
 };

@@ -2,10 +2,16 @@ import { FC } from 'react';
 import { ReactComponent as Logo } from '@svg/bookmark.svg';
 import { MenuItemContainer } from './MenuItemContainer/MenuItemContainer';
 import SideNavStyles from './SideNav.styles';
+
+
+
 export const SideNavBar: FC = () => {
     return (
-        <div>
-            <MenuItemContainer />
-        </div>
+        <SideNavStyles>
+            <MenuItemContainer icon={Logo} text='dashboard' />
+            <MenuItemContainer icon={Logo} text='history' />
+            <MenuItemContainer icon={Logo} text='stats' />
+            <MenuItemContainer icon={Logo} text='bookmarks' />
+        </SideNavStyles>
     );
 };
