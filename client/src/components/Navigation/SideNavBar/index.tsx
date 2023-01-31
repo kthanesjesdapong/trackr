@@ -8,8 +8,8 @@ export const SideNavBar: FC = () => {
         <SideNavStyles>
             <MenuItemContainer icon={Logo} text='dashboard' path='/dashboard' />
             <MenuItemContainer icon={Logo} text='history' path='/history' />
-            <MenuItemContainer icon={Logo} text='history' path='/history' />
-            <MenuItemContainer icon={Logo} text='history' path='/history' />
+            <MenuItemContainer icon={Logo} text='stats' path='/history' />
+            <MenuItemContainer icon={Logo} text='bookmarks' path='/history' />
             {/* <MenuItemContainer icon={Logo} text='stats' />
             <MenuItemContainer icon={Logo} text='bookmarks' /> */}
         </SideNavStyles>

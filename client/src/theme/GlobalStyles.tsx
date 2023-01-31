@@ -16,13 +16,15 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     }
-
+    
     body {
     font-family: ${theme.fonts.primary};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.8;
     min-width: 320px;
+    width: 100%;
+    height: 100%;
+    font-size: ${props => props.theme.fontSizes.xxs};
     }
 
     a {

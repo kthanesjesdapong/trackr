@@ -7,13 +7,11 @@ const TextContainerStyles = styled.div`
   align-items: center;
   padding: ${props => props.theme.space.xxxs};
 
-  li {
-  list-style: none;
+  a {
   font-family: ${props => props.theme.fonts.secondary};
   font-weight: bolder;
   color: black;
   mix-blend-mode: normal;
-
   }
 `;
 
