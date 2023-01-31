@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom';
 export const TextContainer = ({ text, path }: { text: string, path: string; }) => {
     return (
         <TextContainerStyles>
-            <a>
-                <Link to={path}>
-                    {text}
-                </Link>
-            </a>
+            <>
+                <p>
+                    <Link to={path}>
+                        {text}
+                    </Link>
+                </p>
+            </>
         </TextContainerStyles>
     );
 };

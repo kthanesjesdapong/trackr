@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 
 const SideNavStyles = styled.div`
-position: absolute;
-height: 100vh;
+/* position: absolute; */
+/* height: 100vh; */
 width: 256px;
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: flex-start;
 align-items: flex-start;
-padding-left: 35px;
+padding: 100px 39px;
 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
 @media only screen and (max-width: 1750px) {

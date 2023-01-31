@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const NavigationStyles = styled.div`
 display: flex;
-flex-direction: column;
+/* flex-direction: column; */
 `;
 
 export default NavigationStyles;
