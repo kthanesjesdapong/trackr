@@ -11,6 +11,12 @@ export const GlobalStyle = createGlobalStyle`
     ${normalize()}
     ${fonts}
 
+    * { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
     body {
     font-family: ${theme.fonts.primary};
     -webkit-font-smoothing: antialiased;
@@ -22,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     a {
     color: inherit;
     text-decoration: none;
-  }
+    }
 
 
 `;

@@ -1,14 +1,18 @@
 import { FC } from 'react';
-import { TopNavBar } from '@/src/components/TopNavBar/TopNavBar';
 import { DashboardStyles } from './Dashboard.styles';
-import { SideNavBar } from '@/src/components/SideNavBar';
+import { Card } from '@src/components/Cards/index';
+import { vp } from '@src/utils/viewport';
+import { media } from '@src/utils/media';
 
 export const Dashboard: FC = () => {
+    console.log(vp);
 
     return (
         <DashboardStyles>
-            <TopNavBar />
-            <SideNavBar />
+            <h1>
+                HELLO FROM DASH BOARD
+            </h1>
+            <Card />
         </DashboardStyles>
 
     );
@@ -16,3 +20,14 @@ export const Dashboard: FC = () => {
 
 
 export default Dashboard;
+
+
+/*
+obj = {
+    mobile: '40em',
+    tablet: '60em',
+    laptop: '80em'
+    
+}
+
+*/

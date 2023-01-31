@@ -1,7 +1,11 @@
 import { FC } from 'react';
-
-export const History = () => {
+import HistoryStyles from './History.styles';
+const History = () => {
     return (
-        <div>index</div>
+        <HistoryStyles>
+            <h1>THIS IS HISTORY</h1>
+        </HistoryStyles>
     );
 };
+
+export default History;

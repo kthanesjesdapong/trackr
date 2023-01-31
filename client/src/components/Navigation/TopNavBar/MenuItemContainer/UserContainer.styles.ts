@@ -5,9 +5,10 @@ const UserContainerStyles = styled.div`
   height:98px;
   /* width: 175px;  */
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   padding-right: ${props => props.theme.space.m}px;
+  /* border-bottom: 1px solid black; */
 
   p {
   font-family: ${props => props.theme.fonts.secondary};

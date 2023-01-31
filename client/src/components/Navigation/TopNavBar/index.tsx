@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import TopNavBarStyles from './TopNavBar.styles';
-import { UserContainer } from './UserContainer';
-import { LogoContainer } from './LogoContainer';
+import { UserContainer } from './MenuItemContainer/UserContainer';
+import { LogoContainer } from './MenuItemContainer/LogoContainer';
 
-//dummyData
 
+//User Containing is currently rendering dummyData
 export const TopNavBar: FC = () => {
     return (
         <TopNavBarStyles>
