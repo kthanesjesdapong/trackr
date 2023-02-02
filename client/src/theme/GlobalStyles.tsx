@@ -21,10 +21,12 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${theme.fonts.primary};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow: hidden; /* Hide scrollbars */
     min-width: 320px;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     font-size: ${props => props.theme.fontSizes.xxs};
+
     }
 
     a {

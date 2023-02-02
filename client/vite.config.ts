@@ -23,6 +23,7 @@ export const viteConfig = defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@layouts': path.resolve(__dirname, './src/layouts'),
       '@routes': path.resolve(__dirname, './src/routes'),
       '@services': path.resolve(__dirname, './src/services'),
       '@styles': path.resolve(__dirname, './src/styles'),

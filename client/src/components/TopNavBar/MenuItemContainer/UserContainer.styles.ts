@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 const UserContainerStyles = styled.div`
 
-  height:98px;
-  /* width: 175px;  */
+  height:75px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: ${props => props.theme.space.m}px;
-  /* border-bottom: 1px solid black; */
+
+  
 
   p {
   font-family: ${props => props.theme.fonts.secondary};
@@ -17,7 +17,6 @@ const UserContainerStyles = styled.div`
   font-weight: bold;
   line-height: 30px;
   letter-spacing: 2px;
-  /* text-transform: capitalize; */
   }
 `;
 

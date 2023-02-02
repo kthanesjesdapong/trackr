@@ -1,16 +1,12 @@
 import { FC } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '@theme/GlobalStyles';
-import { theme } from '@theme/theme';
-import Dashboard from './pages/Dashboard';
-import History from './pages/History';
+import { RootLayout } from './layouts/RootLayout';
 
+//We'll need one for landing page as well
+//RootLayout is when a user is logged in
+//createBrowserRouter is wrapping around App within Routes.tsx
 export const App: FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Dashboard />
-    </ThemeProvider>
+    <RootLayout />
   );
 };
 
