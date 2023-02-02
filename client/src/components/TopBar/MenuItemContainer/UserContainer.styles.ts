@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 const UserContainerStyles = styled.div`
 
-  height:75px;
+  height:55px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: ${props => props.theme.space.m}px;
+  border-radius: 1px solid;
 
   
 

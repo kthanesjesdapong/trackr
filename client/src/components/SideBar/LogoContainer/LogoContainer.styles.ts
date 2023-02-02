@@ -3,14 +3,11 @@ import styled from 'styled-components';
 const LogoContainerStyles = styled.div`
 
 box-sizing: border-box;
-width: 256px;
-height:98px;
-left: 0px;
-/* top: 3px; */
+
+height:75px;
+
 display: flex;
-/* border-bottom: .5px solid #D5D5D5; */
-// uncomment out justify-content center when putting trackr at the topnavbar
-/* justify-content: center; */
+justify-content: center;
 align-items: center;
 
 

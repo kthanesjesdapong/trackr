@@ -1,14 +1,14 @@
 import { FC } from 'react';
-import TopNavBarStyles from './TopNavBar.styles';
+import TopBarStyles from './TopBarStyles.styles';
 import { UserContainer } from './MenuItemContainer/UserContainer';
 
 
 //User Containing is currently rendering dummyData
-export const TopNavBar: FC = () => {
+export const TopBar: FC = () => {
     return (
-        <TopNavBarStyles className='header'>
+        <TopBarStyles className='header'>
             <UserContainer userId='testing@gmail.com' />
-        </TopNavBarStyles>
+        </TopBarStyles>
     );
 };
 

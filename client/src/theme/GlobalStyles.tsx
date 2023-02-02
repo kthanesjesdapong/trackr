@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     }
     
+
     body {
     font-family: ${theme.fonts.primary};
     -webkit-font-smoothing: antialiased;
@@ -26,7 +27,6 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100vh;
     font-size: ${props => props.theme.fontSizes.xxs};
-
     }
 
     a {

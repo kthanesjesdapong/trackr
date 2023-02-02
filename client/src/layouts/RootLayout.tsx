@@ -1,6 +1,6 @@
-import { TopNavBar } from "../components/TopNavBar";
+import { TopBar } from "../components/TopBar";
 import { Outlet } from "react-router-dom";
-import { SideBar } from "../components/SideNavBar";
+import { SideBar } from "../components/SideBar";
 import RootLayoutStyles from "./RootLayout.styles";
 
 
@@ -12,8 +12,8 @@ export const RootLayout = () => {
                 {/* <Navigation /> */}
                 <header className="header">
                     <nav>
-                        {/*TopNavBar has a class of header*/}
-                        <TopNavBar />
+                        {/*TopBar has a class of header*/}
+                        <TopBar />
                     </nav>
                 </header>
                 {/* SideBar Component has a class of aside */}
