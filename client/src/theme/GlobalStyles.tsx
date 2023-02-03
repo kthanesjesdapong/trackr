@@ -23,10 +23,10 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden; /* Hide scrollbars */
-    min-width: 320px;
-    width: 100%;
-    height: 100vh;
     font-size: ${props => props.theme.fontSizes.xxs};
+    /* min-width: 320px; */
+    /* width: 100%; */
+    /* height: 100vh; */
     }
 
     a {

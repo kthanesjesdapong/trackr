@@ -2,32 +2,28 @@ import styled from 'styled-components';
 
 
 const SideBarStyles = styled.div`
-/* position: absolute; */
 
- /*Grid Properties */
+  /*Grid Properties */
   grid-area: aside;
-  position: fixed;
-
-  //Container
-  /* display: flex;
+ 
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; */
-
+  position: fixed;
   height: 100vh;
   width: 256px;
-  padding: 0% 2.45em;
   box-shadow: 0px 0px 1.25em rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  padding: 0% 2.45em;
   overflow: -moz-hidden-unscrollable;
-  //When you want it hide
+
+  //Hide Sidebar
   /* transform: translateX(-245px); */
-  transition-property: padding transform;
   transition-duration: 0.45s;
+  transition-property: padding transform;
   transition-timing-function: ease-in-out;
   z-index: 2;
 
-  //Enable this later
+  
+  // Shows Sidebar on hover
   /* :hover {
    transform: translateX(0);
    transition-property: transform;
@@ -47,8 +43,50 @@ const SideBarStyles = styled.div`
 
   } */
 
+  //If you disable this is disable
+  .aside__list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  // List styles
+   ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+   }
+
+
+
+   /* responsive layout */
+   /* @media only screen and (min-width: 750px) {
+        .grid-container {
+          display: grid;
+          grid-template-columns: 240px 1fr;
+          grid-template-rows: 50px 1fr 50px;
+          grid-template-areas:
+            'aside header'
+            'aside main'
+            'aside footer';
+          height: 100vh;
+        }
+
+        .aside {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          transform: translateX(0);
+        }
+
+      } */
+
+
   // If you want the sidebar to pop in and out you have to apply at all of this media screens
-  @media only screen and (max-width: 1750px) {
+  /* @media only screen and (max-width: 1750px) {
   padding-top: 1%;
   transition: padding 0.25s ease-in-out;
   }
@@ -67,7 +105,7 @@ const SideBarStyles = styled.div`
   @media only screen and (max-width: 768px) {
   padding-top: 1%;
   transition: padding 0.25s ease-in-out;
-  }
+  } */
 `;
 
 export default SideBarStyles;

@@ -1,16 +1,17 @@
 import { FC } from 'react';
 import { DashboardStyles } from './Dashboard.styles';
-import { Card } from '@src/components/Cards/index';
+import { Overview } from '@src/components/Overview/index';
+import { Card } from '@/src/components/Card';
 
 export const Dashboard: FC = () => {
     return (
-        <DashboardStyles>
-            <h1>
-                HELLO FROM DASH BOARD
-            </h1>
+        <DashboardStyles className='dashboard'>
+            <Overview />
             <Card />
+            <div className="footer">
+                footer stuff coming from dashboard component
+            </div>
         </DashboardStyles>
-
     );
 };
 export default Dashboard;
