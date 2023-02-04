@@ -4,7 +4,7 @@ const RootLayoutStyles = styled.div`
   //.root__layout
   display: grid;
   grid-template-columns: 256px 1fr;
-  grid-template-rows: 45px 1fr 20px;
+  grid-template-rows: 45px 1fr 15px;
   grid-template-areas:
     'aside header'
     'aside main'

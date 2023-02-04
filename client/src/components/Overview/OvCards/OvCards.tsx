@@ -23,7 +23,7 @@ export const OvCard = ({ subHeader, header, amount, percentage }: IOvCards) => {
                 <div className='amount__container'>
                     <h3>{amount} </h3>
                     <br />
-                    <p>&nbsp; +</p>
+                    <p>&nbsp;+</p>
                     <h4>{percentage}%</h4>
                 </div>
                 <div className='percentage__container'>

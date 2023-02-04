@@ -10,8 +10,7 @@ const vpMin = vp({
 });
 
 export const DashboardStyles = styled.div`
-  /* Grid */
-  //.dashboard
+
   height: 100%;
   width: 100%;
 
@@ -20,12 +19,10 @@ export const DashboardStyles = styled.div`
   justify-content: center;
   align-items: center;
   
-
-
   .footer{
     grid-area: footer;
     width: 100%;
-    height: 11%;
+    height: 8%;
   }
 
 /*   

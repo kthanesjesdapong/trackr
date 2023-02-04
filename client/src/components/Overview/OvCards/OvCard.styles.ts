@@ -1,21 +1,26 @@
 import styled from 'styled-components';
 
 const OvCardStyles = styled.div`
-
+  //Display
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-content: center;
-  padding: 15px 35px;
-  flex-basis: 250px;
-  flex-grow: .5;
-  height: 150px;
-  margin: 15px 30px;
-  /* min-width: 200px; */
-  max-width: 370px;
+  align-content: space-between;
+  //Shape
+  padding: 15px 25px;
+  flex-basis: 200px;
+  flex-grow: .2;
+  height: 120px;
+  max-width: 325px;
+  margin: 10px 10px;
+  //Border
   border-radius: 20px;
   background-color: hsla(0, 0%, 100%, 1);
   box-shadow: 5px 5px 5px rgba(0, 1, 1, 0.3);
+  //Font
+  font-family: ${props => props.theme.fonts.primary};
+  font-weight: regular;
+  color: black;
 
   :hover {
     opacity: 40%;
@@ -23,11 +28,6 @@ const OvCardStyles = styled.div`
     transition-property: opacity;
     transition-timing-function: ease-in-out;
   }
-
-  font-family: ${props => props.theme.fonts.primary};
-  font-weight: regular;
-  color: black;
-
 
  .subHeader__container{
   display: flex;
@@ -43,91 +43,79 @@ const OvCardStyles = styled.div`
 
  .header__container{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   opacity: 90%;
-  width: 50%; 
+    h2{
+    font-size: 1.1em;
+    }
  }
 
-.amount__percentage__container{
 
-  /* display: flex;
-  height: 2em;
-  width: 60%;
-  justify-content: flex-end; */
-
-
-
-  /* justify-content: space-evenly;
-  gap: .45em; */
-
-}
 
 
  
  .percentage__container {
-
-  /* padding: .5em 0em;
-  padding-right: 6em;
-  display: flex;
-  justify-content: flex-end; */
-
-
-
-
-
-
   font-family: "Poppins";
   font-weight: bolder;
   font-style: normal;
   font-size: ${props => props.theme.fontSizes.s}; 
-
-
-
-
-  /* transform : translateY(-20px) */
-  /* translateX(-76px) */
  }
  
  .amount__container {
-  /* transform: translateX(10px) translateY(-20px); */
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  
-  h2 {
+  flex-direction: row;  
+    h2, h3 {
     opacity: 80%;
-  }
-
-  h3 {
-    opacity: 80%;
-  }
-
-  p{
+    }
+    h4, p{
     color: #00A389;
-  }
-  h4 {
-    color: #00A389;
-  }
+    }
+
  }
 
 
- @media screen and (max-width: 1580px){ 
+ // Reponsive layout
+
+ @media screen and (min-width: 1580px){ 
   margin: 15px 10px;
   width: 236px;
-  h2, h3, h4 {
+    h2, h3, h4 {
     font-size: .9em;
-  }
-  }
-
-  @media screen and (max-width: 1350) {
-    margin: 15px 5px;
+    }
   }
 
-  @media screen and (max-width: 1280) {
+  @media screen and (min-width: 1350px) {
+    margin: 15px 0px;
+    width: 200px;
     flex-wrap: wrap;
-    background-color: red;
+    h2, h3, h4 {
+    font-size: .85em;
+    }
   }
+
+ @media screen and (min-width:1250px){
+  margin: 15px 0px;
+  h2, h3, h4 {
+    font-size: .8em
+    }
+ }
+
+
+  @media screen and (min-width:1150px){
+  margin: 15px 0px;
+  h2, h3, h4 {
+    font-size: .8em
+    }
+ }
+
+
+  @media screen and (max-width:1085px){
+  margin: 15px 5px;
+  h2, h3, h4 {
+    font-size: .65em;
+    }
+ }
 
 `;
 
