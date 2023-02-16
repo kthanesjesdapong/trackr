@@ -16,6 +16,7 @@ type BreakpointFunction = (breakpoint: Breakpoints) => string;
 type BetweenFunction = (firstBreakpoint: Breakpoints, secondBreakpoint: Breakpoints) => string;
 
 
+//Helper function to return correct breakpoints
 function getSizeFromBreakpoint(breakpointValue: Breakpoints) {
   if (breakpoints[breakpointValue]) {
     return breakpoints[breakpointValue];
@@ -27,6 +28,8 @@ function getSizeFromBreakpoint(breakpointValue: Breakpoints) {
   }
 }
 
+
+//Pass it a breakpoint of 'mobile','tablet,'laptop', 'desktop' to get either min or max of those breakpoints. In EMS
 const max: BreakpointFunction = breakpoint =>
   `@media (max-width: ${getSizeFromBreakpoint(breakpoint)})`;
 
@@ -37,6 +40,7 @@ const between: BetweenFunction = (firstBreakpoint, secondBreakpoint) => `
     @media (min-width: ${getSizeFromBreakpoint(
   firstBreakpoint,
 )}) and (max-width: ${getSizeFromBreakpoint(secondBreakpoint)})`;
+
 
 export const media = {
   min,

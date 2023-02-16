@@ -11,18 +11,28 @@ export const GlobalStyle = createGlobalStyle`
     ${normalize()}
     ${fonts}
 
+    * { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+
     body {
     font-family: ${theme.fonts.primary};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.8;
-    min-width: 320px;
+    overflow: hidden; /* Hide scrollbars */
+    font-size: ${props => props.theme.fontSizes.xxs};
+    /* min-width: 320px; */
+    /* width: 100%; */
+    /* height: 100vh; */
     }
 
     a {
     color: inherit;
     text-decoration: none;
-  }
+    }
 
 
 `;
