@@ -109,14 +109,11 @@ const OvCardStyles = styled.div`
     }
  }
 
-
   @media screen and (max-width:1085px){
   margin: 15px 5px;
   h2, h3, h4 {
     font-size: .65em;
     }
  }
-
 `;
-
 export default OvCardStyles;

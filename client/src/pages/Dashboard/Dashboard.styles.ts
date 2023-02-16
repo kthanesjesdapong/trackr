@@ -26,14 +26,9 @@ export const DashboardStyles = styled.div`
   }
 
 /*   
-
-  
   //Define breakpoints
-
-
 /* 
   @media only screen and (max-width: 768px)  {
     background-color: black;
   } */
-
 `; 
