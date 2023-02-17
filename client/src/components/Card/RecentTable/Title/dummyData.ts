@@ -24,7 +24,7 @@ export const dummyData = [
     status: 'AC',
     title: "Two Sum",
     acceptanceRate: "24",
-    difficulty: "EASY",
+    difficulty: "MEDIUM",
     topicTags: ['array', 'hash-table']
   }, {
     status: 'AC',
@@ -36,7 +36,7 @@ export const dummyData = [
     status: 'AC',
     title: "Two Sum",
     acceptanceRate: "24",
-    difficulty: "EASY",
+    difficulty: "HARD",
     topicTags: ['array', 'hash-table']
   }
 ];
